@@ -1,0 +1,200 @@
+/* ============================================================
+   SECCIÓN GESTIÓN DE TURNOS Y CARRUSEL
+============================================================ */
+.seccion-jornadas {
+    width: 100%;
+    background-color: var(--color-background);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.encabezado-seccion {
+    margin-bottom: 1.5rem;
+}
+
+.insignia-modulo {
+    display: inline-block;
+    background-color: #E8F5E9;
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.encabezado-seccion h2 {
+    color: var(--color-blue-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Contenedor del Carrusel */
+.carrusel-jornadas-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.carrusel-pista-pantalla {
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.carrusel-pista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Tarjeta individual */
+.tarjeta-jornada {
+    background-color: #F8FAF8;
+    border: 1px solid #E2EFE2;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-jornada:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(57, 169, 0, 0.12);
+}
+
+.tarjeta-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.etiqueta-jornada {
+    background-color: #ffffff;
+    border: 1px solid #D1E7D1;
+    color: var(--color-blue-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+.dias-jornada {
+    color: #6C757D;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tarjeta-horario {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-horario ion-icon {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.tarjeta-horario time {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1A1A1A;
+}
+
+.tarjeta-pie {
+    border-top: 1px solid #EAEAEA;
+    padding-top: 0.75rem;
+}
+
+.aforo-texto {
+    color: #555555;
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0;
+}
+
+.aforo-texto strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Botones de navegación */
+.boton-carrusel {
+    background: #ffffff;
+    border: 1px solid #E0E0E0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none; /* Se activa dinámicamente según la pantalla */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.boton-carrusel:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+}
+
+.boton-carrusel ion-icon {
+    font-size: 1.2rem;
+}
+
+.indicadores-carrusel {
+    display: none;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.punto-indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D6D6D6;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.punto-indicador.activo {
+    background-color: var(--color-primary);
+    width: 12px;
+    height: 12px;
+}
+
+/* Ajustes Responsivos */
+@media screen and (max-width: 850px) {
+    .carrusel-pista {
+        display: flex;
+        gap: 0;
+    }
+
+    .tarjeta-jornada {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .boton-carrusel {
+        display: flex;
+    }
+
+    .indicadores-carrusel {
+        display: flex;
+    }
+}

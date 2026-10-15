@@ -1,0 +1,454 @@
+/* ============================================================
+   dashboard-module.css
+============================================================ */
+
+/* Encabezado */
+.bienvenida-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.bienvenida-texto h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.bienvenida-texto h2 span {
+    color: var(--color-primary);
+}
+
+.bienvenida-texto p {
+    padding: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.badge-nivel {
+    background-color: #E8F5E9;
+    color: var(--color-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Card Alerta */
+.card-alerta {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.alerta-icono {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+}
+
+.alerta-contenido {
+    flex: 1;
+}
+
+.alerta-contenido h3 {
+    text-align: left;
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: var(--color-text);
+}
+
+.alerta-contenido p {
+    padding: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.btn-alerta {
+    background: var(--color-primary);
+    color: var(--color-grey);
+    border: 1px solid #ddd;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-alerta:hover {
+    background: var(--color-secondary);
+    color: #ffffff;
+    border-color: var(--color-grey);
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1.5rem;
+}
+
+.seccion-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.seccion-cabecera h3 {
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Carrusel de Novedades */
+.carrusel-controles {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carrusel-btn {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.carrusel-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.carrusel-contenedor {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.4s ease-in-out;
+    will-change: transform;
+}
+
+.tarjeta-novedad {
+    min-width: calc(50% - 0.5rem);
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-imagen {
+    position: relative;
+    height: 140px;
+    width: 100%;
+}
+
+.tarjeta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.etiqueta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.etiqueta.verde {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.tarjeta-cuerpo {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tiempo-publicacion {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.tarjeta-cuerpo h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.tarjeta-cuerpo p {
+    padding: 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.enlace-mas {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.enlace-mas:hover {
+    color: var(--color-secondary);
+}
+
+/* Banner de Acción Inferior */
+.banner-accion {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 14px;
+    padding: 1.8rem;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+}
+
+.banner-texto h3 {
+    text-align: left;
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.banner-texto p {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.btn-banner {
+    background: var(--color-background);
+    color: var(--color-secondary);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-banner:hover {
+    background: var(--color-secondary);
+    color: var(--color-grey);
+    transform: translateY(-2px);
+}
+
+.banner-icono-fondo {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.12);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Columna Lateral y Cards */
+.tarjeta-panel {
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.panel-cabecera h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text);
+}
+
+.grid-metricas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+
+.metrica-caja {
+    background: var(--color-grey);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.metrica-numero {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.metrica-etiqueta {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #777;
+}
+
+.hito-progreso {
+    border-top: 1px solid #eee;
+    padding-top: 0.8rem;
+}
+
+.hito-texto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.hito-texto span {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hito-texto small {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.barra-progreso-bg {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.barra-progreso-fill {
+    height: 100%;
+    background: var(--color-primary);
+}
+
+/* Lista de Atajos */
+.lista-atajos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-atajo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.6rem;
+    text-decoration: none;
+    color: var(--color-text);
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.item-atajo:hover {
+    background: var(--color-grey);
+}
+
+.icono-atajo {
+    width: 36px;
+    height: 36px;
+    background: var(--color-grey);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+}
+
+.texto-atajo {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-atajo strong {
+    font-size: 0.85rem;
+}
+
+.texto-atajo span {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+/* Ayuda */
+.ayuda-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.ayuda-card p {
+    padding: 0;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.8rem;
+}
+
+.enlace-ayuda {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.enlace-ayuda:hover {
+    text-decoration: underline;
+}
+

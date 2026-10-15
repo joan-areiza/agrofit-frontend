@@ -1,0 +1,617 @@
+/* ============================================================
+   MÓDULO DE VALORACIÓN BIOMÉTRICA Y TÉCNICA
+============================================================ */
+
+.seccion-evaluacion {
+    width: 100%;
+}
+
+/* ENCABEZADO */
+.evaluacion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.badge-subtitulo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.evaluacion-header h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.descripcion-header {
+    padding: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.tarjeta-aprendiz {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.info-aprendiz {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-aprendiz {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.05em;
+}
+
+.nombre-aprendiz {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap;
+}
+
+.id-aprendiz {
+    background: #f1f5f9;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    white-space: nowrap;
+}
+
+/* GRID PRINCIPAL DE EVALUACIÓN */
+.grid-evaluacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.columna-evaluacion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* TARJETAS GENERATORIAS */
+.tarjeta-evaluacion {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.tarjeta-evaluacion h3 {
+    text-align: left;
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: #1a202c;
+}
+
+.titulo-tarjeta {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.titulo-tarjeta ion-icon {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.titulo-tarjeta ion-icon.icono-rojo {
+    color: #e53e3e;
+}
+
+.subtexto-tarjeta {
+    display: block;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* BLOQUE 1: DATOS ANTROPOMÉTRICOS */
+.grid-medidas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.input-grupo label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 0.35rem;
+}
+
+.input-unidad {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-unidad input, .grid-perimetros input {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-unidad input:focus, .grid-perimetros input:focus {
+    border-color: var(--color-primary);
+    background: #fff;
+}
+
+.input-unidad .unidad {
+    position: absolute;
+    right: 0.75rem;
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.card-imc {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imc-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.imc-resultado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+}
+
+.imc-resultado #valor-imc {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #15803d;
+}
+
+.badge-imc {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.imc-normal { background: #dcfce7; color: #15803d; }
+.imc-alerta { background: #fef3c7; color: #b45309; }
+
+.titulo-subgrupo {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 0.6rem;
+}
+
+.grid-perimetros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+/* BLOQUE 2: CONDICIONES MÉDICAS Y DRAG & DROP */
+.grid-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.checkbox-custom {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    user-select: none;
+    color: #2d3748;
+}
+
+.checkbox-custom input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-custom:hover input ~ .checkmark {
+    border-color: var(--color-primary);
+}
+
+.checkbox-custom input:checked ~ .checkmark {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-custom input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-custom .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.zona-drop {
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.zona-drop:hover, .zona-drop.dragover {
+    border-color: var(--color-primary);
+    background: #f0fdf4;
+}
+
+.input-archivo-oculto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icono-drop ion-icon {
+    font-size: 1.75rem;
+    color: #64748b;
+}
+
+.contenido-drop p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    padding: 0;
+    margin: 0.25rem 0;
+}
+
+.subtexto-drop {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* BLOQUE 3: RANGE SLIDER */
+.contenedor-range {
+    margin-top: 1.25rem;
+}
+
+.slider-actividad {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 5px;
+    background: #e2e8f0;
+    outline: none;
+}
+
+.slider-actividad::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.slider-actividad::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.labels-slider {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+}
+
+.labels-slider span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+    transition: color 0.2s ease;
+}
+
+.labels-slider span.activo {
+    color: var(--color-primary);
+}
+
+/* BLOQUE 4 & 5: COMPLEXIÓN Y MODO DE ENTRENAMIENTO */
+.opciones-complexion, .opciones-modo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+.opcion-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.opcion-card.seleccionada {
+    border-color: var(--color-primary);
+    background: #f0fdf4;
+}
+
+.avatar-letra {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.avatar-letra.badge-verde {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.info-card {
+    flex: 1;
+}
+
+.info-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1e293b;
+}
+
+.info-card p {
+    padding: 0;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.icono-check {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    flex-shrink: 0;
+}
+
+.opcion-card.seleccionada .icono-check,
+.card-modo.seleccionado .icono-check {
+    color: var(--color-primary);
+}
+
+.card-modo {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.85rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.card-modo.seleccionado {
+    border-color: var(--color-primary);
+    background: #f0fdf4;
+}
+
+.tag-nivel {
+    position: absolute;
+    top: 0.75rem;
+    right: 2.2rem;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+.tag-nivel.tag-verde {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.header-modo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-modo h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.card-modo p {
+    padding: 0;
+    margin: 0.35rem 0 0.6rem 0;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.detalles-modo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.detalles-modo span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.detalles-modo ion-icon {
+    color: #d97706;
+}
+
+/* ESTADOS Y ACCIONES */
+.alerta-incompleto {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fff5f5;
+    border: 1px solid #fed7d7;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.alerta-incompleto ion-icon {
+    font-size: 1.4rem;
+    color: #e53e3e;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.alerta-incompleto h4 {
+    text-align: left;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #9b2c2c;
+}
+
+.alerta-incompleto p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.75rem;
+    color: #c53030;
+}
+
+.btn-guardar {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-guardar:hover:not(:disabled) {
+    background: var(--color-secondary);
+}
+
+.btn-guardar:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.pie-alerta-veridicos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #64748b;
+    text-align: center;
+}

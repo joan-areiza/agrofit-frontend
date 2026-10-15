@@ -1,0 +1,342 @@
+/* ============================================================
+   ESTILOS PARA MÓDULO DE HISTORIAL DE ASISTENCIAS
+============================================================ */
+
+.historial-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+}
+
+/* Encabezado Principal */
+.historial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.historial-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.historial-header p {
+    color: #666;
+    font-size: 15px;
+    padding: 0;
+    max-width: 650px;
+}
+
+/* Botón "Registrar Hoy" */
+.btn-accion-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-accion-header:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-1px);
+}
+
+/* Estilo para el botón inverso "Ver Mi Historial" (para la otra vista) */
+.btn-ver-historial {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-ver-historial:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* Grid de Métricas */
+.grid-metricas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.tarjeta-metrica {
+    background: var(--color-background);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.metrica-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.icono-metrica {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.icono-metrica.verde {
+    background: #eefcf3;
+    color: var(--color-primary);
+}
+
+.icono-metrica.gris {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.badge-periodo {
+    border: 1px solid #e2e8f0;
+    font-size: 11px;
+    color: #64748b;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.label-metrica {
+    font-size: 13px;
+    color: #475569;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.valor-metrica {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
+
+.comparativa-metrica {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #64748b;
+}
+
+.comparativa-metrica ion-icon {
+    font-size: 14px;
+}
+
+/* Layout Inferior: Gráfica + Resumen */
+.grid-panel-grafica {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.25rem;
+}
+
+.card-panel {
+    background: var(--color-background);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+/* Panel Izquierdo: Gráfica */
+.panel-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.icono-titulo {
+    color: var(--color-primary);
+}
+
+.panel-header p {
+    font-size: 13px;
+    color: #64748b;
+    padding: 0;
+    margin-top: 2px;
+}
+
+.grafica-wrapper {
+    display: flex;
+    margin-top: 1.5rem;
+    height: 220px;
+    position: relative;
+}
+
+.lineas-guia {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 12px;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.barras-contenedor {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-bottom: 1px dashed #cbd5e1;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Líneas punteadas horizontales de fondo */
+.barras-contenedor::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 52px,
+        #f1f5f9 52px,
+        #f1f5f9 53px
+    );
+    z-index: 1;
+}
+
+.columna-barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    z-index: 2;
+    width: 70px;
+}
+
+.barra {
+    width: 100%;
+    height: var(--porcentaje);
+    background-color: var(--color-primary);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.6s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+.barra:hover {
+    background-color: var(--color-secondary);
+}
+
+.label-semana {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Panel Derecho: Resumen */
+.card-resumen {
+    background-color: #f0f7ff;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-resumen h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.meta-progreso-wrapper {
+    margin-bottom: 1.25rem;
+}
+
+.meta-progreso-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.barra-progreso-bg {
+    width: 100%;
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra-progreso-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+}
+
+.grid-resumen-detalles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.caja-resumen {
+    background: var(--color-background);
+    padding: 0.75rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-resumen {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.05em;
+}
+
+.valor-resumen {
+    font-size: 13px;
+    color: #0f172a;
+    margin-top: 2px;
+}
+
+.nota-motivacional {
+    font-size: 12px;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.5;
+    padding: 0;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+

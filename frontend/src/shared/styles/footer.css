@@ -1,0 +1,122 @@
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    width: 100%;
+    background-color: var(--color-secondary);
+    padding: 50px 8% 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    color: var(--color-grey);
+}
+
+/* Contenedores de columna */
+.footer > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- COLUMNA IZQUIERDA: REDES Y SITIO WEB --- */
+.footer > div:first-child {
+    align-items: flex-start;
+    gap: 12px;
+}
+.footer h4 {
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+/* =========================
+   FOOTER SOCIAL ICONS + LINK
+========================= */
+.footer .icons ion-icon {
+    color: var(--color-grey);
+    font-size: 1.4rem;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer .icons ion-icon:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    
+}
+
+/* Link www.sena.edu.co - subrayado predeterminado */
+.footer a {
+    text-decoration: none;
+    color: var(--color-grey);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+/* --- COLUMNA DERECHA: DERECHOS Y PRIVACIDAD --- */
+.footer > div:last-child {
+    align-items: flex-end;
+    text-align: right;
+    gap: 16px;
+    max-width: 450px;
+}
+
+.footer p {
+    color: var(--color-grey);
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0;
+    opacity: 0.9;
+}
+
+.footer > div:last-child p {
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/*Sidebar*/
+.pie-barra-lateral {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+}
+
+.pie-barra-lateral p {
+    color: var(--color-grey);
+    font-size: 1rem;
+}
+
+.pie-barra-lateral p,
+.pie-barra-lateral a {
+    margin: 0;
+    padding: 0;
+}
+
+.pie-barra-lateral a {
+    color: var(--color-grey);
+    text-decoration: none;
+}
+
+.pie-barra-lateral a:hover {
+    text-decoration: underline;
+    color: var(--color-secondary);
+}

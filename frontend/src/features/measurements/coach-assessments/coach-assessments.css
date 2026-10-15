@@ -1,0 +1,414 @@
+/* ============================================================
+   DIRECTORIO DE APRENDICES (Estilos del Módulo)
+============================================================ */
+
+.directorio-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Panel Superior (Header & Filtros) */
+.tarjeta-filtro-directorio {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.badge-modulo {
+    background: #E8F5E9;
+    color: var(--color-primary, #39A900);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.titulo-directorio {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.subtitulo-directorio {
+    color: #6B7280;
+    font-size: 0.875rem;
+    padding: 0;
+}
+
+/* Controles de búsqueda y select */
+.controles-filtro {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-wrapper, .busqueda-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-filtro, .input-busqueda {
+    height: 42px;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 0 1rem;
+    background-color: #F9FAFB;
+    outline: none;
+    font-size: 0.875rem;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.select-filtro {
+    appearance: none;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.input-busqueda {
+    padding-left: 2.25rem;
+    width: 200px;
+}
+
+.select-filtro:focus, .input-busqueda:focus {
+    border-color: var(--color-primary, #39A900);
+    background-color: #ffffff;
+}
+
+.icono-select {
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+    color: #6B7280;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 0.85rem;
+    pointer-events: none;
+    color: #9CA3AF;
+    font-size: 1.1rem;
+}
+
+/* Carrusel y Estructura */
+.carrusel-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.carrusel-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* Tarjeta Aprendiz */
+.tarjeta-aprendiz {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 1.25rem;
+    min-width: 330px;
+    max-width: 330px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.encabezado-aprendiz {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.perfil-info {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nombre-aprendiz {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    text-align: left;
+}
+
+.doc-aprendiz {
+    font-size: 0.8rem;
+    color: var(--color-primary, #39A900);
+    font-weight: 600;
+}
+
+/* Badges de Estado */
+.badge-estado {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.badge-estado.activo {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+.badge-estado.adaptacion {
+    background-color: #FEF3C7;
+    color: #B45309;
+}
+
+/* Detalles del Aprendiz */
+.detalles-aprendiz {
+    background-color: #F9FAFB;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fila-detalle {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.825rem;
+}
+
+.fila-detalle .label {
+    color: #6B7280;
+}
+
+.fila-detalle .valor-bold {
+    font-weight: 700;
+    color: #111827;
+    text-align: right;
+}
+
+.estado-completada, .estado-encurso {
+    color: #15803D;
+    font-weight: 700;
+}
+
+/* Botón Acción Card */
+.btn-mensaje {
+    width: 100%;
+    height: 40px;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-mensaje ion-icon {
+    font-size: 1.1rem;
+    color: var(--color-primary, #39A900);
+}
+
+.btn-mensaje:hover {
+    background-color: #E5E7EB;
+}
+
+/* Botones Navegación Carrusel */
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.btn-carrusel:hover {
+    background: #F9FAFB;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-carrusel:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btn-carrusel.prev { left: -18px; }
+.btn-carrusel.next { right: -18px; }
+
+
+/* ============================================================
+   ESTILOS DEL MODAL (Enviar Mensaje)
+============================================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 62, 44, 0.65); /* Fondo oscuro verdoso igual a la imagen */
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-contenido {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    margin: 1rem;
+}
+
+.modal-overlay.activo .modal-contenido {
+    transform: translateY(0);
+}
+
+.modal-titulo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #112A12;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.grupo-input {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+.modal-input, .modal-textarea {
+    width: 100%;
+    border: 1px solid #D1E7DD;
+    background-color: #F8FCF8;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: #374151;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.modal-input:focus, .modal-textarea:focus {
+    border-color: var(--color-primary, #39A900);
+    background-color: #ffffff;
+}
+
+.modal-input::placeholder, .modal-textarea::placeholder {
+    color: #9CA3AF;
+}
+
+.modal-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botones del Modal */
+.modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.btn-modal-cancelar {
+    padding: 0.65rem 1.75rem;
+    border-radius: 12px;
+    border: 1px solid #D1E7DD;
+    background: #F8FCF8;
+    color: #112A12;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-modal-cancelar:hover {
+    background: #E8F5E9;
+}
+
+.btn-modal-enviar {
+    padding: 0.65rem 1.75rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--color-primary, #39A900);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-modal-enviar:hover {
+    background: var(--color-secondary, #007832);
+}
+

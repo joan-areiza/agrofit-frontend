@@ -1,0 +1,179 @@
+/* ============================================================
+   MÓDULO PROGRAMAS DE FORMACIÓN
+============================================================ */
+.contenedor-tarjeta-principal {
+    background: var(--color-background, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.badge-sena {
+    display: inline-block;
+    background-color: #E8F5E9;
+    color: var(--color-secondary, #007832);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-modulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text, #000000);
+    margin-bottom: 1.5rem;
+}
+
+/* CARRUSEL CONTENEDOR */
+.carrusel-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrusel-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 5px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 1.25rem;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* TARJETAS */
+.tarjeta-programa {
+    flex: 0 0 calc(50% - 0.625rem); /* Renderiza 2 tarjetas por vista en Desktop */
+    background: #FAFAFA;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-programa:hover {
+    border-color: var(--color-primary, #39A900);
+    box-shadow: 0 6px 15px rgba(57, 169, 0, 0.08);
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.codigo-badge {
+    background-color: #E8F5E9;
+    color: var(--color-secondary, #007832);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.nivel-badge {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #555555;
+}
+
+.titulo-programa {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text, #000000);
+    text-align: left;
+    margin: 0 0 0.5rem 0;
+}
+
+.centro-programa {
+    font-size: 0.875rem;
+    color: #666666;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.fichas-contenedor {
+    border-top: 1px solid #E5E7EB;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.label-fichas {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-text, #000000);
+}
+
+.fichas-lista {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.ficha-tag {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-primary, #39A900);
+}
+
+/* BOTONES NAVEGACIÓN */
+.btn-carrusel {
+    background-color: var(--color-background, #ffffff);
+    border: 1px solid #E5E7EB;
+    color: var(--color-text, #000000);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+}
+
+.btn-carrusel ion-icon {
+    font-size: 1.25rem;
+}
+
+.btn-carrusel:hover {
+    background-color: var(--color-primary, #39A900);
+    color: var(--color-grey, #ffffff);
+    border-color: var(--color-primary, #39A900);
+}
+
+.btn-carrusel:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background-color: #F3F4F6;
+    border-color: #E5E7EB;
+    color: #9CA3AF;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 820px) {
+    .tarjeta-programa {
+        flex: 0 0 100%; /* 1 tarjeta por vista en pantallas medianas y móviles */
+    }
+
+    .contenedor-tarjeta-principal {
+        padding: 1.5rem;
+    }
+}

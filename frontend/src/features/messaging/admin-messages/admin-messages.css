@@ -1,0 +1,231 @@
+/* ============================================================
+   MÓDULO DE EMISIÓN DE ALERTAS
+============================================================ */
+
+.seccion-alertas {
+    background: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.etiqueta-badge {
+    display: inline-block;
+    background: #E8F5E9;
+    color: var(--color-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.encabezado-modulo h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.encabezado-modulo h2 ion-icon {
+    color: var(--color-primary);
+    font-size: 26px;
+}
+
+.encabezado-modulo p {
+    color: #666;
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+/* Formulario e Inputs */
+.tarjeta-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.grupo-campo input[type="text"],
+.grupo-campo select,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--color-text);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.grupo-campo input[type="text"]:focus,
+.grupo-campo select:focus,
+.grupo-campo textarea:focus {
+    background: var(--color-background);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(57, 169, 0, 0.15);
+}
+
+.grupo-campo textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Personalización Select */
+.contenedor-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+.icono-select {
+    position: absolute;
+    right: 14px;
+    pointer-events: none;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Carrusel de Selección */
+.carrusel-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    padding: 4px;
+}
+
+.carrusel-track::-webkit-scrollbar {
+    display: none; /* Chrome / Safari */
+}
+
+.tarjeta-imagen {
+    flex: 0 0 120px;
+    height: 90px;
+    background: #F3F4F6;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.tarjeta-imagen ion-icon {
+    font-size: 24px;
+    color: #6B7280;
+}
+
+.tarjeta-imagen span {
+    font-size: 12px;
+    color: #374151;
+    font-weight: 500;
+}
+
+.tarjeta-imagen:hover {
+    background: #E5E7EB;
+}
+
+.tarjeta-imagen.activa {
+    border-color: var(--color-primary);
+    background: #E8F5E9;
+}
+
+.tarjeta-imagen.activa ion-icon,
+.tarjeta-imagen.activa span {
+    color: var(--color-secondary);
+}
+
+.btn-carrusel {
+    background: var(--color-background);
+    border: 1px solid #E5E7EB;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.btn-carrusel:hover {
+    background: var(--color-grey);
+    color: var(--color-primary);
+}
+
+/* Botón Emitir */
+.btn-emitir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 12px 24px;
+    background: var(--color-primary);
+    color: var(--color-grey);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-emitir:hover {
+    background: var(--color-secondary);
+}
+
+/* Adaptación Responsiva */
+@media screen and (max-width: 600px) {
+    .seccion-alertas {
+        padding: 1.5rem 1rem;
+    }
+
+    .btn-emitir {
+        width: 100%;
+    }
+}

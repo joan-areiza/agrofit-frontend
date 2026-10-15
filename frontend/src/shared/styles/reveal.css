@@ -1,0 +1,56 @@
+/* =========================
+   REVEAL ON SCROLL
+========================= */
+[data-reveal] {
+    opacity: 0 ;
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+[data-reveal="fade-up"] {
+    transform: translateY(40px);
+}
+
+[data-reveal="fade-down"] {
+    transform: translateY(-40px);
+}
+
+[data-reveal="fade-left"] {
+    transform: translateX(-50px);
+}
+
+[data-reveal="fade-right"] {
+    transform: translateX(50px);
+}
+
+[data-reveal="scale-in"] {
+    transform: scale(0.92);
+}
+
+[data-reveal="fade-in"] {
+    transform: none;
+}
+
+/* Retrasos escalonados para grupos */
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+[data-reveal-delay="4"] { transition-delay: 0.4s; }
+[data-reveal-delay="5"] { transition-delay: 0.5s; }
+[data-reveal-delay="6"] { transition-delay: 0.6s; }
+
+/* Respeto a preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

@@ -1,0 +1,236 @@
+/* ============================================================
+   MÓDULO CONTROL DE ASISTENCIAS
+============================================================ */
+.modulo-asistencias {
+    width: 100%;
+}
+
+/* Encabezado */
+.insignia-modulo {
+    display: inline-block;
+    background-color: #e2f0d9;
+    color: var(--color-secondary, #007832);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.titulo-modulo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-text, #000000);
+    margin-bottom: 6px;
+}
+
+.descripcion-modulo {
+    font-size: 14px;
+    color: #666;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+/* Contenedor y Tarjetas */
+.contenedor-solicitudes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tarjeta-solicitud {
+    background-color: #f4f8f3;
+    border: 1px solid #e0ebd9;
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.solicitud-info {
+    flex: 1;
+    width: 100%;
+}
+
+.solicitud-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.nombre-aprendiz {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    text-align: left;
+    margin: 0;
+}
+
+.ficha-aprendiz {
+    font-weight: 400;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Badges de Estado */
+.estado-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.estado-badge.aprobado {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.estado-badge.pendiente {
+    background-color: #ffe69c;
+    color: #664d03;
+}
+
+/* Texto Informativo */
+.detalle-rutina {
+    font-size: 13px;
+    color: #333;
+    padding: 0;
+    margin-bottom: 4px;
+}
+
+.comentario-aprendiz {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+    padding: 0;
+}
+
+/* Acciones de Tarjeta */
+.solicitud-acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-accion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-accion ion-icon {
+    font-size: 18px;
+}
+
+.btn-video {
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    color: #333;
+}
+
+.btn-video:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-aprobar {
+    background-color: var(--color-primary, #39A900);
+    color: #ffffff;
+}
+
+.btn-aprobar:hover {
+    background-color: var(--color-secondary, #007832);
+}
+
+.btn-rechazar {
+    background-color: #fde8e8;
+    color: #dc3545;
+    border: 1px solid #f8b4b4;
+}
+
+.btn-rechazar:hover {
+    background-color: #f8d7da;
+}
+
+/* ============================================================
+   CARRUSEL DE EVIDENCIAS
+============================================================ */
+.carrusel-evidencias {
+    position: relative;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-pista-contenedor {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.carrusel-pista {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carrusel-item {
+    min-width: 100%;
+    height: 220px;
+    background-color: #e0e0e0;
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Botones de Navegación del Carrusel */
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-carrusel:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.btn-carrusel ion-icon {
+    font-size: 20px;
+    color: var(--color-text, #000);
+}
+
+.btn-carrusel.prev { left: 10px; }
+.btn-carrusel.next { right: 10px; }
+

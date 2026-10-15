@@ -1,0 +1,363 @@
+/* ============================================================
+   ESTILOS PARA MÓDULO DE ASISTENCIA
+============================================================ */
+
+.asistencia-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Header de la sección - Ajuste Flexbox para colocar el botón a la derecha */
+.asistencia-header.header-con-boton {
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 1.5rem;
+}
+
+.header-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.header-accion {
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.badge-asistencia {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.asistencia-header h1 {
+    color: var(--color-text);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.asistencia-header p {
+    color: #666;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Botón "Ver Mi Historial" */
+.btn-ver-historial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.btn-ver-historial:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(57, 169, 0, 0.2);
+}
+
+/* Carrusel y Tarjeta Principal */
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.tarjeta-sesion {
+    min-width: 100%;
+    background: var(--color-background);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* Encabezado de la Tarjeta */
+.sesion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.sesion-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.fecha-sesion {
+    font-size: 13px;
+    color: #888;
+}
+
+.icono-logro {
+    background: #eefcf3;
+    color: var(--color-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Grid de detalles de la sesión */
+.grid-detalles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.caja-detalle {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-detalle .label,
+.info-instructor .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #718096;
+    letter-spacing: 0.05em;
+}
+
+.caja-detalle .valor {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-top: 4px;
+}
+
+/* Caja del Instructor */
+.caja-instructor {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.avatar-instructor {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-instructor {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-instructor {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.meta-instructor {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 11px;
+    color: #718096;
+    margin-top: 2px;
+}
+
+.meta-instructor span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0;
+    font-size: 11px;
+}
+
+/* Mensajes y Botones */
+.nota-confirmacion {
+    font-size: 11px;
+    font-style: italic;
+    color: #718096;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.btn-registrar {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-registrar:hover {
+    background-color: var(--color-secondary);
+}
+
+.btn-registrar.deshabilitado {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+    justify-content: center;
+}
+
+.btn-registrar span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    padding: 0;
+}
+
+.sesion-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1rem;
+    font-size: 13px;
+    color: #4a5568;
+}
+
+/* Botones de navegación del Carrusel */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-background);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.carrusel-btn:hover {
+    background: var(--color-grey);
+}
+
+.carrusel-btn.prev { left: -18px; }
+.carrusel-btn.next { right: -18px; }
+
+.carrusel-dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.activo {
+    background: var(--color-primary);
+}
+
+/* Tarjetas Informativas Inferiores */
+.grid-info-inferior {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.tarjeta-info {
+    background: var(--color-background);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.icono-info {
+    font-size: 22px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.icono-info.amarillo {
+    color: var(--color-yellow);
+}
+
+.tarjeta-info h3 {
+    text-align: left;
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    color: var(--color-text);
+}
+
+.tarjeta-info p {
+    font-size: 12px;
+    color: #718096;
+    padding: 0;
+    line-height: 1.4;
+}
+

@@ -1,0 +1,88 @@
+/* =========================
+   BOTONES HERO
+========================= */
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-grey);
+    border: 1px solid var(--color-grey);
+    padding: 12px 34px;
+    font-size: 18px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.hero-btn:hover {
+    border: 1px solid var(--color-secondary);
+    background: var(--color-secondary);
+}
+
+.hero-about-btn {
+    margin-left: 6px;
+    background: var(--color-grey);
+    color: var(--color-text);
+}
+
+.hero-about-btn:hover {
+    color: var(--color-grey);
+}
+
+/* Ajuste del botón secundario para evitar márgenes fijos problemáticos */
+.hero-about-btn {
+    margin-left: 0; 
+}
+
+.green-btn {
+    border: 1px solid var(--color-grey);
+    color: var(--color-grey);
+}
+
+.green-btn:hover {
+    background: var(--color-secondary, green);
+}
+
+/* =========================
+   BOTÓN MENU
+========================= */
+.menu-movil {
+    display: none;
+    /* oculto en desktop */
+}
+
+.header-buttons .btn-login-header,
+.header-buttons .btn-register-header,
+.menu-movil {
+
+    padding: 15px 30px;
+
+    width: 170px;
+    height: 50px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-primary);
+    border: transparent;
+    outline: none;
+    border-radius: 25px;
+
+    cursor: pointer;
+    font-size: 1.1em;
+    color: var(--color-grey);
+    font-weight: 500;
+
+    transition: .5s;
+}
+
+.header-buttons .btn-login-header:hover,
+.header-buttons .btn-register-header:hover,
+.menu-movil:hover {
+    background: var(--color-secondary);
+}
+
+
+
+
+

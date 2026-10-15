@@ -1,0 +1,107 @@
+/* ============================================================
+   MÓDULO DE ANTROPOMETRÍA - LISTA VERTICAL
+============================================================ */
+.seccion-antropometria {
+    background-color: var(--color-background, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 2rem;
+}
+
+/* Header del Módulo */
+.badge-tag {
+    display: inline-block;
+    background-color: #E8F5E9;
+    color: var(--color-secondary, #007832);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.modulo-titulo {
+    color: var(--color-text, #000000);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    text-align: left;
+}
+
+.modulo-subtitulo {
+    color: #666666;
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0 0 1.75rem 0;
+    padding: 0;
+}
+
+/* Contenedor de la lista vertical */
+.lista-evaluaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaciado entre tarjetas verticales */
+}
+
+/* Tarjeta Individual de Evaluación */
+.tarjeta-evaluacion {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #F8FBF8;
+    border: 1px solid #E2EFE2;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-evaluacion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Columnas de Datos */
+.eval-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.eval-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #757575;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.eval-valor {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text, #000000);
+}
+
+.eval-valor .programa {
+    font-weight: 600;
+    color: var(--color-text, #000000);
+}
+
+.estado-optimo {
+    color: var(--color-primary, #39A900);
+}
+
+.estado-moderado {
+    color: #D97706;
+}
+
+.badge-estado {
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+

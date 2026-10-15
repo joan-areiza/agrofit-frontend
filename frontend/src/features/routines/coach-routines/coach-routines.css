@@ -1,0 +1,464 @@
+/* ============================================================
+   MÓDULO SOLICITUD / DETALLE INSTRUCTOR
+============================================================ */
+
+.modulo-solicitud {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Header & Breadcrumbs */
+.header-solicitud .migas-pan {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.header-solicitud a {
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.header-solicitud .usuario-actual {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Tarjeta Perfil */
+.tarjeta-perfil {
+    background: var(--color-background);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-usuario {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-usuario {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.datos-usuario h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.meta-usuario {
+    font-size: 0.875rem;
+    color: #666;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.metricas-progreso {
+    display: flex;
+    gap: 1rem;
+}
+
+.insignia-progreso {
+    background: #F4FBF7;
+    border: 1px solid #E0F2E9;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.insignia-progreso ion-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.insignia-progreso small {
+    display: block;
+    font-size: 0.65rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.insignia-progreso strong {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+}
+
+/* Layout Grid */
+.grid-solicitud {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.columna-principal, .columna-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilos de Secciones y Carrusel */
+.seccion-carrusel, .seccion-bitacora {
+    background: var(--color-background);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.encabezado-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.encabezado-seccion h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.tag-contador {
+    background: var(--color-grey);
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.contenedor-carrusel {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.track-carrusel {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.4s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+.tarjeta-evidencia {
+    min-width: calc(33.333% - 0.7rem);
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.media-container {
+    position: relative;
+    height: 120px;
+    background: #000;
+}
+
+.media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.badge-tipo {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.badge-tipo.video { background: var(--color-primary); }
+.badge-tipo.foto { background: var(--color-purple); }
+
+.info-evidencia {
+    padding: 0.75rem;
+}
+
+.info-evidencia small {
+    color: #888;
+    font-size: 0.7rem;
+    display: block;
+}
+
+.info-evidencia h4 {
+    font-size: 0.85rem;
+    margin-top: 2px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.btn-carrusel:hover { background: #fff; }
+.btn-prev { left: 5px; }
+.btn-next { right: 5px; }
+
+/* Bitácora */
+.lista-bitacora {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.item-bitacora {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F9FBF9;
+    border: 1px solid #EEF4EE;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.badge-dia {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: #E8F5E9;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1;
+}
+
+.badge-dia span {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.detalles-ejecucion h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.tags-ejercicio {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tags-ejercicio span {
+    font-size: 0.7rem;
+    background: #EAEAEA;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.meta-duracion {
+    text-align: right;
+}
+
+.meta-duracion small {
+    font-size: 0.6rem;
+    color: #888;
+    display: block;
+}
+
+.meta-duracion .tiempo {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.estado-check {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+/* Columna Lateral / Cards */
+.card-panel {
+    background: var(--color-background);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.titulo-panel {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.desc-panel {
+    font-size: 0.8rem;
+    color: #666;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.acciones-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-accion {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-aprobar {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.btn-aprobar:hover { background: var(--color-secondary); }
+
+.btn-rechazar {
+    background: transparent;
+    border: 1px solid #E57373;
+    color: #D32F2F;
+}
+
+.btn-rechazar:hover { background: #FFEBEE; }
+
+.nota-informativa {
+    margin-top: 1rem;
+    background: #F5F5F5;
+    border-radius: 6px;
+    padding: 0.6rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.nota-informativa ion-icon {
+    font-size: 1.2rem;
+    color: #666;
+    flex-shrink: 0;
+}
+
+.nota-informativa p {
+    font-size: 0.75rem;
+    color: #555;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.lista-biometrica {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lista-biometrica li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.4rem;
+}
+
+.tag-objetivo {
+    background: #E8F5E9;
+    color: var(--color-secondary);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.texto-observacion {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #555;
+    background: #FAF8F5;
+    border-left: 3px solid var(--color-yellow);
+    padding: 0.5rem 0.75rem;
+    margin: 0;
+}
+
+.panel-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.link-descarga {
+    font-size: 0.8rem;
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.link-descarga:hover { color: var(--color-primary); }
+
+/* Adaptación Responsiva Módulo */
+@media screen and (max-width: 992px) {
+    .grid-solicitud {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tarjeta-evidencia {
+        min-width: 100%;
+    }
+    .tarjeta-perfil {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

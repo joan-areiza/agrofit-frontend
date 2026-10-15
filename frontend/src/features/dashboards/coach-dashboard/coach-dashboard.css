@@ -1,0 +1,235 @@
+/* ============================================================
+   ESTILOS GENERALES DEL DÁSHBOARD
+============================================================ */
+.seccion-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Banner de Encabezado */
+.banner-panel {
+    background-color: var(--color-primary);
+    background: linear-gradient(135deg, #004d20 0%, var(--color-primary) 100%);
+    color: var(--color-grey, #F6F6F6);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.tag-instructor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.titulo-panel {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.descripcion-panel {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0;
+    margin: 0;
+}
+
+/* Grid / Carrusel de Métricas */
+.contenedor-carrusel {
+    width: 100%;
+    position: relative;
+}
+
+.carrusel-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.tarjeta-metrica {
+    background: var(--color-background, #ffffff);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.metrica-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.label-metrica {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.03em;
+}
+
+.valor-metrica {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text, #000000);
+    margin: 0;
+}
+
+.subtexto-metrica {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.subtexto-metrica.meta {
+    color: var(--color-primary, #39A900);
+    font-weight: 600;
+}
+
+/* Iconos de métricas */
+.icono-metrica {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.verde-suave { background-color: #e6f4ea; color: var(--color-primary, #39A900); }
+.naranja-suave { background-color: #fef3c7; color: #d97706; }
+.verde-claro { background-color: #dcfce7; color: var(--color-secondary, #007832); }
+
+/* Tarjeta de Solicitudes */
+.tarjeta-revision {
+    background: var(--color-background, #ffffff);
+    border: 1px solid #fef08a;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.badge-revision {
+    color: #b45309;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.titulo-solicitudes {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+    font-size: 1.25rem;
+    color: var(--color-text, #000000);
+    margin: 0.5rem 0 1.25rem 0;
+}
+
+.lista-solicitudes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.item-solicitud {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.detalles-aprendiz {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nombre-aprendiz {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-text, #000000);
+}
+
+.info-ficha {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.acciones-solicitud {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-secundario, .btn-aprobar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-secundario {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+}
+
+.btn-secundario:hover {
+    background: #f1f5f9;
+}
+
+.btn-aprobar {
+    background: var(--color-primary, #39A900);
+    border: none;
+    color: #ffffff;
+}
+
+.btn-aprobar:hover {
+    background: var(--color-secondary, #007832);
+}
+
+.carrusel-indicadores {
+    display: none;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.punto-indicador {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    transition: background 0.3s ease;
+}
+
+.punto-indicador.activo {
+    background: var(--color-primary, #39A900);
+}
+

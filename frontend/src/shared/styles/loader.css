@@ -1,0 +1,44 @@
+/* Contenedor del mapa */
+.contact__map {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color-gray,#e0e0e0); /* color de fondo mientras carga */
+}
+
+/* Loader centrado y fijo sobre el mapa */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 5px solid var(--color-gray, #fff);
+    border-bottom-color: var(--color-secondary);
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* El mapa (cuando se inserta) */
+.contact__map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    pointer-events: none; /* ← esto evita que se pueda manipular (zoom, arrastrar, etc.) */
+}

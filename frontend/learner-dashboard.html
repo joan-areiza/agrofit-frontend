@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrofit | Modulo - Aprendiz</title>
+    <link rel="icon" type="image/png" href="/public/assets/img/sena-logo.png">
+
+    <!-- ==================== BASE ==================== -->
+    <!-- Reset -->
+    <link rel="stylesheet" href="/src/shared/styles/reset.css">
+
+    <!-- Variables -->
+    <link rel="stylesheet" href="/src/shared/styles/variables.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/src/shared/styles/fonts.css">
+
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="/src/shared/styles/general.css">
+
+    <!-- ==================== COMPONENTES ==================== -->
+    <!-- Sidebar / Menú lateral -->
+    <link rel="stylesheet" href="/src/shared/styles/sidebar.css">
+
+    <!-- Botones -->
+    <link rel="stylesheet" href="/src/shared/styles/buttons.css">
+
+    <!-- Scroll -->
+    <link rel="stylesheet" href="/src/shared/styles/scroll.css">
+
+    <!-- Footer -->
+    <link rel="stylesheet" href="/src/shared/styles/footer.css">
+
+    <!-- ==================== FRAMEWORKS ==================== -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- ==================== RESPONSIVE ==================== -->
+    <link rel="stylesheet" href="/src/shared/styles/responsive.css">
+
+    <!-- ==================== PÁGINA ==================== -->
+    <!-- Bienvenida - Aprendiz -->
+    <link rel="stylesheet" href="/src/features/dashboards/learner-dashboard/learner-dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Botón que despliega/oculta la barra lateral en pantallas pequeñas -->
+    <button class="menu-movil" id="menuMovil" aria-label="Toggle navigation">
+        Menú
+    </button>
+
+    <!-- Fondo oscuro que aparece detrás del menú cuando está abierto en móvil -->
+    <div class="superposicion" id="superposicion"></div>
+
+    <!-- Barra lateral: menú principal de navegación -->
+    <aside class="barra-lateral" id="barraLateral">
+
+
+
+
+        <!-- Encabezado: logo + nombre del aprendiz -->
+        <div class="encabezado-barra-lateral">
+            <div class="marca-barra-lateral" id="btnPerfil" role="button" tabindex="0">
+                <div class="icono-perfil">
+                    <ion-icon name="person"></ion-icon>
+                </div>
+                <div class="info-perfil-texto">
+                    <span class="version-marca">Juan Perez</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Navegación: enlaces a cada módulo/sección de la plataforma -->
+        <nav class="nav-barra-lateral">
+            <!-- Perfil: SOLO dock móvil, primer ítem -->
+            <div class="item-nav solo-movil">
+                <a href="#" class="enlace-nav btn-abrir-perfil" title="Actualizar perfil">
+                    <ion-icon name="person-circle-outline"></ion-icon> Perfil
+                </a>
+            </div>
+
+
+            <div class="item-nav">
+                <a href="/src/features/dashboards/learner-dashboard/learner-dashboard.html" class="enlace-nav activo">
+                    <ion-icon name="home"></ion-icon> Inicio
+                </a>
+            </div>
+
+            <div class="item-nav">
+                <a href="/src/features/measurements/learner-measurements/learner-measurements.html" class="enlace-nav ">
+                    <ion-icon name="person"></ion-icon> Medidas
+                </a>
+            </div>
+
+            <div class="item-nav">
+                <a href="/src/features/orientation/adaptation-week/adaptation-week.html" class="enlace-nav">
+                    <ion-icon name="barbell"></ion-icon> Semana de Adaptación
+                </a>
+            </div>
+
+            <div class="item-nav">
+                <a href="/src/features/routines/learner-routines/learner-routines.html" class="enlace-nav">
+                    <ion-icon name="clipboard"></ion-icon> Rutinas
+                </a>
+            </div>
+
+            <div class="item-nav">
+                <a href="/src/features/attendance/learner-attendance/learner-attendance.html" class="enlace-nav">
+                    <ion-icon name="checkmark-circle"></ion-icon> Asistencia
+                </a>
+            </div>
+
+            <div class="item-nav">
+                <a href="/src/features/progress/routine-progress/routine-progress.html" class="enlace-nav">
+                    <ion-icon name="sparkles"></ion-icon> Progreso
+                </a>
+            </div>
+
+            <div class="item-nav">
+                <a href="/src/features/messaging/learner-messages/learner-messages.html" class="enlace-nav">
+                    <ion-icon name="mail-unread"></ion-icon> Mensajes
+                </a>
+            </div>
+
+            <!-- Cierre de sesión: redirige al login e invoca confirmación vía SweetAlert2 -->
+            <div class="item-nav">
+                <a href="#" class="enlace-nav btn-logout" id="btnLogout">
+                    <ion-icon name="exit"></ion-icon> Cerrar Sesión
+                </a>
+            </div>
+        </nav>
+
+        <!-- Pie de la barra lateral: créditos institucionales -->
+        <footer class="pie-barra-lateral">
+            <p>&copy; 2026 Todos los derechos reservados | <a href="https://www.sena.edu.co/" target="_blank">SENA</a> -
+            </p>
+            <a href="#" title="Pagina del SENA" target="_blank">
+                Términos & Privacidad</a>
+        </footer>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="principal-doc">
+        <div class="contenido-doc">
+            <section id="dashboard-inicio" class="dashboard-seccion">
+                <header class="bienvenida-header">
+                    <div class="bienvenida-texto">
+                        <h2>Bienvenido, <span>Juan Pérez</span></h2>
+                        <p>Es un gran día para superar tus límites.</p>
+                    </div>
+                    <span class="badge-nivel">
+                        <ion-icon name="trending-up-outline"></ion-icon> Nivel Inicial
+                    </span>
+                </header>
+
+                <div class="card-alerta exito">
+                    <div class="alerta-icono">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                    <div class="alerta-contenido">
+                        <h3>¡Solicitud aprobada con éxito!</h3>
+                        <p>Has completado satisfactoriamente tu <strong>Semana de Adaptación</strong>. Ahora tienes
+                            acceso total a todas las funcionalidades de entrenamiento y seguimiento.</p>
+                    </div>
+                    <button class="btn-alerta">Comenzar Entrenamiento</button>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="columna-principal">
+                        <div class="seccion-cabecera">
+                            <h3><ion-icon name="newspaper-outline"></ion-icon> Novedades del Gimnasio</h3>
+                            <div class="carrusel-controles">
+                                <button class="carrusel-btn" id="prevBtn" aria-label="Anterior"><ion-icon
+                                        name="chevron-back-outline"></ion-icon></button>
+                                <button class="carrusel-btn" id="nextBtn" aria-label="Siguiente"><ion-icon
+                                        name="chevron-forward-outline"></ion-icon></button>
+                            </div>
+                        </div>
+
+                        <div class="carrusel-contenedor">
+                            <div class="carrusel-track" id="carruselTrack">
+                                <article class="tarjeta-novedad">
+                                    <div class="tarjeta-imagen">
+                                        <span class="etiqueta verde">Instalaciones</span>
+                                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
+                                            alt="Máquinas de cardio">
+                                    </div>
+                                    <div class="tarjeta-cuerpo">
+                                        <span class="tiempo-publicacion">HACE 2 HORAS</span>
+                                        <h4>Nuevas Máquinas de Cardio en Zona A</h4>
+                                        <p>Hemos renovado nuestro equipo de cardio con la última tecnología de
+                                            LifeFitness para tus entrenamientos.</p>
+                                        <a href="#" class="enlace-mas">Leer más <ion-icon
+                                                name="arrow-forward-outline"></ion-icon></a>
+                                    </div>
+                                </article>
+
+                                <article class="tarjeta-novedad">
+                                    <div class="tarjeta-imagen">
+                                        <span class="etiqueta verde">Evento</span>
+                                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80"
+                                            alt="Plato saludable">
+                                    </div>
+                                    <div class="tarjeta-cuerpo">
+                                        <span class="tiempo-publicacion">MAÑANA, 10:00 AM</span>
+                                        <h4>Taller de Nutrición: Macros y Micros</h4>
+                                        <p>Aprende a balancear tu dieta según tus objetivos de entrenamiento con nuestra
+                                            especialista.</p>
+                                        <a href="#" class="enlace-mas">Leer más <ion-icon
+                                                name="arrow-forward-outline"></ion-icon></a>
+                                    </div>
+                                </article>
+
+                                <article class="tarjeta-novedad">
+                                    <div class="tarjeta-imagen">
+                                        <span class="etiqueta verde">Desafío</span>
+                                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
+                                            alt="Remo indoor">
+                                    </div>
+                                    <div class="tarjeta-cuerpo">
+                                        <span class="tiempo-publicacion">OCTUBRE 2026</span>
+                                        <h4>Reto Mensual: 50km de Remo</h4>
+                                        <p>Participa en el reto del mes y gana una sesión de entrenamiento totalmente
+                                            personalizada.</p>
+                                        <a href="#" class="enlace-mas">Leer más <ion-icon
+                                                name="arrow-forward-outline"></ion-icon></a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="banner-accion">
+                            <div class="banner-texto">
+                                <h3>¿Listo para hoy?</h3>
+                                <p>Tu plan de entrenamiento personalizado te está esperando. Registra tus progresos y
+                                    alcanza tus metas.</p>
+                                <button class="btn-banner">Explorar mi rutina <ion-icon
+                                        name="arrow-forward-outline"></ion-icon></button>
+                            </div>
+                            <div class="banner-icono-fondo">
+                                <ion-icon name="barbell-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="columna-lateral">
+                        <div class="tarjeta-panel">
+                            <div class="panel-cabecera">
+                                <h4><ion-icon name="flash-outline"></ion-icon> Mi Resumen</h4>
+                            </div>
+                            <div class="grid-metricas">
+                                <div class="metrica-caja">
+                                    <span class="metrica-numero">0</span>
+                                    <span class="metrica-etiqueta">SESIONES</span>
+                                </div>
+                                <div class="metrica-caja">
+                                    <span class="metrica-numero">7</span>
+                                    <span class="metrica-etiqueta">DÍAS ADAPT.</span>
+                                </div>
+                            </div>
+                            <div class="hito-progreso">
+                                <div class="hito-texto">
+                                    <span>Próximo Hito</span>
+                                    <small>Faltan 5 sesiones para "Constancia Bronce"</small>
+                                </div>
+                                <div class="barra-progreso-bg">
+                                    <div class="barra-progreso-fill" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-panel">
+                            <div class="panel-cabecera">
+                                <h4>Atajos Rápidos</h4>
+                            </div>
+                            <ul class="lista-atajos">
+                                <li>
+                                    <a href="#" class="item-atajo">
+                                        <div class="icono-atajo"><ion-icon name="calendar-outline"></ion-icon></div>
+                                        <div class="texto-atajo">
+                                            <strong>Mi Horario</strong>
+                                            <span>Consulta tus días asignados</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item-atajo">
+                                        <div class="icono-atajo"><ion-icon name="time-outline"></ion-icon></div>
+                                        <div class="texto-atajo">
+                                            <strong>Historial</strong>
+                                            <span>Mira tus entrenos pasados</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item-atajo">
+                                        <div class="icono-atajo"><ion-icon
+                                                name="chatbubble-ellipses-outline"></ion-icon></div>
+                                        <div class="texto-atajo">
+                                            <strong>Instructor</strong>
+                                            <span>Enviar mensaje a tu coach</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tarjeta-panel ayuda-card">
+                            <h4>¿Necesitas ayuda?</h4>
+                            <p>Si tienes dudas sobre cómo usar una máquina o realizar un ejercicio, contacta a un
+                                instructor en sala.</p>
+                            <a href="#" class="enlace-ayuda">Guía de usuario <ion-icon
+                                    name="chevron-forward-outline"></ion-icon></a>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- MODAL DE PERFIL & DATOS DE CONTACTO -->
+    <!-- ============================================================ -->
+    <div class="modal-overlay" id="modalPerfilOverlay">
+        <div class="modal-perfil-container">
+            <!-- Encabezado del Modal -->
+            <div class="modal-perfil-header">
+                <div class="header-info">
+                    <div class="header-icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div>
+                        <h2>Mi Perfil & Datos de Contacto</h2>
+                        <p>Actualiza tus canales de notificación y bioseguridad</p>
+                    </div>
+                </div>
+                <button class="btn-close-modal" id="btnClosePerfil" aria-label="Cerrar modal">&times;</button>
+            </div>
+
+            <!-- Cuerpo del Modal -->
+            <div class="modal-perfil-body">
+
+                <!-- Sección: Foto de Perfil -->
+                <div class="card-seccion flex-row align-center">
+                    <div class="avatar-preview">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                            alt="Foto de perfil">
+                    </div>
+                    <div class="avatar-actions">
+                        <span class="seccion-label">Fotografía del Perfil</span>
+                        <div class="button-group">
+                            <button class="btn-secondary-outline">
+                                <ion-icon name="camera-outline"></ion-icon> Cambiar Foto
+                            </button>
+                            <button class="btn-danger-outline">
+                                <ion-icon name="trash-outline"></ion-icon> Quitar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Información Personal (Solo lectura) -->
+                <div class="card-seccion grid-info">
+                    <div class="info-item">
+                        <span class="info-label">NOMBRES Y APELLIDOS</span>
+                        <strong class="info-value">Jairo Andrés Pérez Gómez</strong>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">DOCUMENTO</span>
+                        <strong class="info-value">CC 1002345678</strong>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">FICHA DE FORMACIÓN</span>
+                        <strong class="info-value highlight-green">2694520</strong>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ROL EN EL SISTEMA</span>
+                        <strong class="info-value">Aprendiz</strong>
+                    </div>
+                </div>
+
+                <!-- Sección: Formulario de Contacto -->
+                <form id="formPerfil" class="form-perfil">
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico (Institucional o Personal) *</label>
+                        <div class="input-icon-wrapper">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <input type="email" id="correo" value="jairo.perez@misena.edu.co" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono Celular *</label>
+                        <div class="input-icon-wrapper">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <input type="tel" id="telefono" value="3124567890" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactoEmergencia">Contacto de Emergencia / Acudiente</label>
+                        <div class="input-icon-wrapper">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <input type="tel" id="contactoEmergencia" value="3159876543">
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Sección: Zona de Seguridad -->
+                <div class="card-seccion zona-peligro">
+                    <div class="peligro-header">
+                        <ion-icon name="warning-outline"></ion-icon>
+                        <strong>Zona de Seguridad de Cuenta</strong>
+                    </div>
+                    <p>Puedes radicar una solicitud formal para cancelar tu cuenta de AGROFIT y transferir tu historial
+                        lúdico.</p>
+                    <a href="#" class="link-eliminar">Solicitar eliminación permanente de mi cuenta</a>
+                </div>
+
+            </div>
+
+            <!-- Pie del Modal (Acciones) -->
+            <div class="modal-perfil-footer">
+                <button class="btn-cancelar" id="btnCancelPerfil">Cancelar</button>
+                <button class="btn-guardar" type="submit" form="formPerfil">
+                    <ion-icon name="save-outline"></ion-icon> Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MODAL DE PERFIL & DATOS DE CONTACTO -->
+    <!-- ============================================================ -->
+    <div class="modal-overlay" id="modalPerfilOverlay">
+        <div class="modal-perfil-container">
+            <!-- Encabezado del Modal -->
+            <div class="modal-perfil-header">
+                <div class="header-info">
+                    <div class="header-icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div>
+                        <h2>Mi Perfil & Datos de Contacto</h2>
+                        <p>Actualiza tus canales de notificación y bioseguridad</p>
+                    </div>
+                </div>
+                <button class="btn-close-modal" id="btnClosePerfil" aria-label="Cerrar modal">&times;</button>
+            </div>
+
+            <!-- Cuerpo del Modal -->
+            <div class="modal-perfil-body">
+
+                <!-- Sección: Foto de Perfil -->
+                <div class="card-seccion flex-row align-center">
+                    <div class="avatar-preview">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                            alt="Foto de perfil">
+                    </div>
+                    <div class="avatar-actions">
+                        <span class="seccion-label">Fotografía del Perfil</span>
+                        <div class="button-group">
+                            <button class="btn-secondary-outline">
+                                <ion-icon name="camera-outline"></ion-icon> Cambiar Foto
+                            </button>
+                            <button class="btn-danger-outline">
+                                <ion-icon name="trash-outline"></ion-icon> Quitar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Información Personal (Solo lectura) -->
+                <div class="card-seccion grid-info">
+                    <div class="info-item">
+                        <span class="info-label">NOMBRES Y APELLIDOS</span>
+                        <strong class="info-value">Jairo Andrés Pérez Gómez</strong>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">DOCUMENTO</span>
+                        <strong class="info-value">CC 1002345678</strong>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">FICHA DE FORMACIÓN</span>
+                        <strong class="info-value highlight-green">2694520</strong>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ROL EN EL SISTEMA</span>
+                        <strong class="info-value">Aprendiz</strong>
+                    </div>
+                </div>
+
+                <!-- Sección: Formulario de Contacto -->
+                <form id="formPerfil" class="form-perfil">
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico (Institucional o Personal) *</label>
+                        <div class="input-icon-wrapper">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <input type="email" id="correo" value="jairo.perez@misena.edu.co" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono Celular *</label>
+                        <div class="input-icon-wrapper">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <input type="tel" id="telefono" value="3124567890" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactoEmergencia">Contacto de Emergencia / Acudiente</label>
+                        <div class="input-icon-wrapper">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <input type="tel" id="contactoEmergencia" value="3159876543">
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Sección: Zona de Seguridad -->
+                <div class="card-seccion zona-peligro">
+                    <div class="peligro-header">
+                        <ion-icon name="warning-outline"></ion-icon>
+                        <strong>Zona de Seguridad de Cuenta</strong>
+                    </div>
+                    <p>Puedes radicar una solicitud formal para cancelar tu cuenta de AGROFIT y transferir tu historial
+                        lúdico.</p>
+                    <a href="#" class="link-eliminar">Solicitar eliminación permanente de mi cuenta</a>
+                </div>
+
+            </div>
+
+            <!-- Pie del Modal (Acciones) -->
+            <div class="modal-perfil-footer">
+                <button class="btn-cancelar" id="btnCancelPerfil">Cancelar</button>
+                <button class="btn-guardar" type="submit" form="formPerfil">
+                    <ion-icon name="save-outline"></ion-icon> Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Librería de alertas SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JS SIDEBAR Y MODAL PERFIL -->
+    <script src="/src/shared/components/sidebar.js"></script>
+
+    <!-- JS propio de bienvenida -->
+    <script src="/src/features/dashboards/learner-dashboard/learner-dashboard.js" defer></script>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

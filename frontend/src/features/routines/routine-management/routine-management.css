@@ -1,0 +1,238 @@
+/* Layout del Módulo */
+.rutinas-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.tarjeta-panel {
+    background-color: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Badges y Textos */
+.badge-tag {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-panel, .titulo-banco {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.titulo-panel ion-icon {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+/* Formulario */
+.form-rutina {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.fila-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.label-campo {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.input-texto, .select-campo {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    background-color: #f8faf9;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-texto:focus, .select-campo:focus {
+    border-color: var(--color-primary);
+    background-color: var(--color-background);
+}
+
+/* Carrusel Vertical / Lista Seleccionable */
+.carrusel-vertical {
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-right: 6px;
+    margin-top: 0.4rem;
+}
+
+/* Personalización Scrollbar */
+.carrusel-vertical::-webkit-scrollbar {
+    width: 6px;
+}
+.carrusel-vertical::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.item-ejercicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    background-color: #f4f6f5;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.item-ejercicio.seleccionado {
+    background-color: #e8f5e9;
+    border-color: #a5d6a7;
+}
+
+.item-ejercicio input[type="checkbox"] {
+    display: none;
+}
+
+.texto-ejercicio {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2c3e50;
+    padding-right: 10px;
+}
+
+.custom-check {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #b0bec5;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.item-ejercicio.seleccionado .custom-check {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Botón Guardar */
+.btn-guardar,.btn-regresar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.25rem;
+}
+
+.btn-guardar,.btn-regresar:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Botón Regresar */
+.btn-regresar {
+    background-color: transparent;
+    color: #555;
+    border: 1px solid #d0d7de;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-regresar:hover {
+    background-color: #f0f4f2;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Banco de Rutinas */
+.lista-banco {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.card-rutina-banco {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background-color: #f8faf9;
+    border: 1px solid #e0e0e0;
+}
+
+.info-rutina-banco .nombre-rutina-banco {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 4px 0 2px 0;
+    text-align: left;
+}
+
+.meta-rutina-banco {
+    font-size: 0.825rem;
+    color: #666;
+    padding: 0;
+}
+
+.btn-eliminar-rutina {
+    background: none;
+    border: none;
+    color: #9e9e9e;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-eliminar-rutina:hover {
+    color: #dc3545;
+    background-color: #fbe9eb;
+}
+

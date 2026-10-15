@@ -1,0 +1,453 @@
+/* =========================
+   MODAL
+========================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 99;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.wrapper {
+    position: relative;
+    width: min(400px, 90vw);
+
+    background: var(--color-background, white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+    /* importante */
+    z-index: 1001;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+    display: grid;
+    max-height: 90vh;
+    /* limita la altura */
+}
+
+.wrapper .form-box::before,
+.wrapper .form-box::after {
+    content: '';
+    flex: 1;
+}
+
+.modal-overlay.active .wrapper {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* =========================
+   BOTÓN WRAPPER
+========================= */
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--color-primary);
+    font-size: 2em;
+    color: var(--color-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper .icon-close:hover {
+    background: var(--color-secondary);
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+.wrapper .form-box {
+    grid-area: 1 / 1;
+    width: 100%;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: calc(90vh - 45px);
+    margin-top: 45px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    transition: transform 0.25s ease, opacity 0.25s ease;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+}
+
+.wrapper .form-box form {
+    width: 100%;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.wrapper .form-box.login {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* =========================
+   FORMULARIOS OCULTOS
+========================= */
+
+.wrapper .form-box.register,
+.wrapper .form-box.forgot-password,
+.wrapper .form-box.verification-code,
+.wrapper .form-box.new-password {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+/* =========================
+   REGISTRO
+========================= */
+
+/* Estados del modal */
+.wrapper.active .form-box.login {
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.wrapper.forgot-active .form-box.login {
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+.wrapper.forgot-active .form-box.register {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+.wrapper.forgot-active .form-box.forgot-password {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* =========================
+   RECUPERAR CONTRASEÑA
+========================= */
+
+.wrapper.verification-active .form-box.login,
+.wrapper.verification-active .form-box.forgot-password {
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+.wrapper.verification-active .form-box.register {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+.wrapper.verification-active .form-box.verification-code {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* =========================
+   NUEVA CONTRASEÑA
+========================= */
+
+.wrapper.new-password-active .form-box.login,
+.wrapper.new-password-active .form-box.verification-code {
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+.wrapper.new-password-active .form-box.register,
+.wrapper.new-password-active .form-box.forgot-password {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+.wrapper.new-password-active .form-box.new-password {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-box h2 {
+    font-size: 2em;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.form-box p {
+    color: var(--color-text);
+}
+
+/* =========================
+   BOTONES DE FORM
+========================= */
+.btn-form {
+    width: 100%;
+    height: 45px;
+    background: var(--color-primary);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--color-grey);
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn-form+.btn-form {
+    margin-top: 6px;
+}
+
+.btn-form:hover {
+    background: var(--color-secondary);
+}
+
+.login-register {
+    font-size: .9em;
+    color: var(--color-text);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.recovery-info {
+    color: var(--color-text);
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   INPUT BOX + ICONOS
+========================= */
+.input-box-radio {
+    width: 100%;
+    margin: 10px 0 0;
+
+}
+
+.input-box-radio .radio-label {
+    display: block;
+    font-size: 0.95em;
+    color: var(--color-text, black);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.input-box-maritial {
+    padding-top: 0;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--color-text, black);
+    margin: 25px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--color-text, black);
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:not(:placeholder-shown)~label {
+    top: -5px;
+    font-size: 0.85em;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--color-text, black);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: var(--color-text, black);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+.checkbox {
+    font-size: 0.9em;
+    color: var(--color-text, black);
+    font-weight: 500;
+    margin: 10px 0 20px;
+    display: flex;
+    flex-direction: column;
+    /* uno encima del otro */
+    align-items: flex-start;
+    /* alineados a la izquierda */
+    gap: 10px;
+}
+
+.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.checkbox label input {
+    margin-right: 3px;
+    accent-color: var(--color-primary);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.checkbox a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.checkbox a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+.select-box {
+    position: relative;
+}
+
+.select-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--color-text, black);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+
+.select-box select:invalid {
+    color: var(--color-text, black);
+}
+
+.select-box select option {
+    color: var(--color-text);
+    background: var(--color-grey);
+}
+
+.select-box select option:checked {
+    background: var(--color-primary);
+    color: var(--color-grey);
+}
+
+/* =========================
+   RADIO
+========================= */
+.radio-options {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
+    color: var(--color-text, black);
+    font-weight: 500;
+    cursor: pointer;
+    position: static;
+    transform: none ;
+}
+
+.radio-options input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    margin: 0;
+}
+
+

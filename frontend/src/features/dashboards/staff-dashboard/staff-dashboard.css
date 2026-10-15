@@ -1,0 +1,289 @@
+/* ============================================================
+   PANEL OPERATIVO DE FUNCIONARIOS
+============================================================ */
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Banner Hero */
+.banner-hero {
+    background-color: var(--color-secondary);
+    background: linear-gradient(135deg, #004d20 0%, var(--color-primary) 100%);
+    color: var(--color-background, #ffffff);
+    padding: 2.5rem;
+    border-radius: 20px;
+}
+
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.banner-titulo {
+    color: var(--color-background, #ffffff);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.banner-descripcion {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 750px;
+    padding: 0;
+}
+
+/* Carrusel de Métricas */
+.carrusel-metricas-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0.25rem;
+    width: 100%;
+    scrollbar-width: none; /* Firefox */
+}
+
+.carrusel-contenedor::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.tarjeta-metrica {
+    min-width: 280px;
+    flex: 1;
+    background: var(--color-background, #ffffff);
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.metrica-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.05em;
+}
+
+.metrica-valor {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-blue-primary);
+    margin: 0.25rem 0;
+}
+
+.metrica-valor span {
+    font-size: 1.1rem;
+    color: #94A3B8;
+    font-weight: 400;
+}
+
+.metrica-subtexto {
+    font-size: 0.8rem;
+    color: #94A3B8;
+}
+
+.metrica-icono {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.icono-verde-claro {
+    background-color: #D1FAE5;
+    color: #10B981;
+}
+
+/* Botones de navegación del carrusel */
+.carrusel-btn {
+    display: flex; /* Ocultos en desktop si entran todas las cards */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-background, #fff);
+    border: 1px solid #CBD5E1;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.carrusel-btn.prev { left: -15px; }
+.carrusel-btn.next { right: -15px; }
+
+/* Grid Inferior */
+.panel-grid-inferior {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card-modulo {
+    background: var(--color-background, #ffffff);
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.card-encabezado {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-icono-header {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+.card-encabezado h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-blue-primary);
+}
+
+.card-instruccion {
+    font-size: 0.875rem;
+    color: #64748B;
+    padding: 0;
+    margin-bottom: 1.25rem;
+}
+
+/* Formulario */
+.form-busqueda {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.form-busqueda input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D1D5DB;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.form-busqueda input:focus {
+    border-color: var(--color-primary);
+}
+
+.btn-validar {
+    background-color: #00C853;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-validar:hover {
+    background-color: var(--color-secondary);
+}
+
+.mensaje-resultado {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Checklist Higiene */
+.lista-higiene-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+}
+
+.item-higiene {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.item-higiene.completado {
+    background-color: #E8F5E9;
+    border-color: #C8E6C9;
+}
+
+.item-higiene.pendiente {
+    background-color: #F8FAFC;
+    border-color: #E2E8F0;
+}
+
+.higiene-detalles {
+    display: flex;
+    flex-direction: column;
+}
+
+.higiene-detalles strong {
+    font-size: 0.9rem;
+    color: var(--color-blue-primary);
+}
+
+.higiene-detalles span {
+    font-size: 0.75rem;
+    color: #64748B;
+}
+
+.btn-estado-higiene {
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.completado .btn-estado-higiene {
+    color: #15803D;
+}
+
+.pendiente .btn-estado-higiene {
+    color: #94A3B8;
+}
+

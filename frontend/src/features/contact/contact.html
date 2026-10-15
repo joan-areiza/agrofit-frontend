@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../src/shared/styles/reset.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/variables.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/fonts.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/general.css">
+
+    <link rel="stylesheet" href="../../../src/shared/styles/navbar.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/buttons.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/modal.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/scroll.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/loader.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/footer.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/responsive.css">
+    <link rel="stylesheet" href="../../../src/shared/styles/reveal.css">
+
+
+    <link rel="stylesheet" href="../../../src/features/contact/contact.css">
+    <title>Agrofit</title>
+    <link rel="icon" type="image/png" href="../../../public/assets/img/sena-logo.png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="../../../public/assets/img/agrofit-logo.png" alt="Logo de la plataforma" class="logo-agrofit">
+                </a>
+            </div>
+
+            <nav>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="../../../index.html">INICIO</a></li>
+                        <li><a href="../../../src/features/about/about.html">ACERCA DE</a></li>
+                        <li><a href="../../../src/features/contact/contact.html">UBICACIÓN & CONTACTO</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="header-buttons">
+                <button class="btn-login-header">Iniciar Sesión</button>
+                <button class="btn-register-header">Registrarse</button>
+            </div>
+
+            <button class="menu-movil" id="menuMovil" onclick="open_nav()" type="button">
+                Menú
+            </button>
+
+            
+        </div>
+
+
+
+        <div class="overlay" id="mobile-menu">
+            <a onclick="close_nav()" href="#" class="close">
+                <ion-icon name="close"></ion-icon>
+            </a>
+            <div class="overlay-content">
+                <a href="../../../index.html">INICIO</a>
+                <a href="../../../src/features/about/about.html">ACERCA DE</a>
+                <a href="../../../src/features/contact/contact.html">UBICACIÓN & CONTACTO</a>
+            </div>
+        </div>
+
+        <h1 data-reveal="fade-down">¡Contactanos!</h1>
+    </header>
+
+
+    <section class="location">
+
+        <h1 data-reveal="fade-down">¿Donde estamos?</h1>
+
+        <div class="contact__map" id="load-iframe-map" data-reveal="scale-in" data-reveal-delay="1">
+            <!-- A diferencia de "class", el atributo "id" identifica a este elemento de forma única en toda la página (no se puede repetir); aquí probablemente lo usa el script map.js para encontrar este div exacto y cargar dentro de él un mapa (por ejemplo un iframe de Google Maps) mediante JavaScript -->
+            <span class="loader"></span>
+            <!-- Muestra el círculo animado definido en loader.css mientras el mapa se está cargando en segundo plano -->
+        </div>
+
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col" data-reveal="fade-left">
+                <div>
+                    <ion-icon name="home"></ion-icon>
+                    <span>
+                        <h5>Servicio Nacional de Aprendizaje (SENA)</h5>
+                        <p>Popayán, Regional Cauca, Sede Centro Agropecuario.</p>
+                    </span>
+                </div>
+                <div>
+                    <ion-icon name="call"></ion-icon>
+                    <span>
+                        <h5>+57 987-6543-120</h5>
+                        <p>Lunes a Viernes, 10AM a 6PM.</p>
+                    </span>
+                </div>
+                <div>
+                    <ion-icon name="mail"></ion-icon>
+                    <span>
+                        <h5>gimnasio.agrofit@sena.edu.co</h5>
+                        <p>Escríbenos a nuestro correo y con gusto te ayudaremos.</p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="contact-col" data-reveal="fade-right" data-reveal-delay="2">
+                <form action="">
+                    <input type="text" placeholder="Escribe tu nombre completo" required>
+                    <input type="email" placeholder="Escribe tu correo electrónico" required>
+                    <input type="text" placeholder="Escribe el título del mensaje" required>
+                    <textarea rows="8" placeholder="Escribe el mensaje" required></textarea>
+                    <button type="submit" class="hero-btn green-btn">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+            </span>
+
+            <!-- Login -->
+            <div class="form-box login">
+                <h2>Iniciar Sesión</h2>
+                <form action="#">
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="login-document-type" name="login-document-type" required>
+                            <option value="" disabled selected>Seleccione su tipo de documento</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="PPT">Permiso por Protección Temporal</option>
+                            <option value="PEP">Permiso Especial de Permanencia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="id-card"></ion-icon></span>
+                        <input type="number" id="login-num-document" name="login-num-document" inputmode="numeric"
+                            minlength="10" pattern="[0-9]{10}"
+                            title="El número de identificación debe contener mínimo 10 carácteres" placeholder=" "
+                            required>
+                        <label for="login-num-document">Número de Identificación</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="login-password" name="login-password" minlength="15"
+                            pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres" placeholder=" "
+                            required>
+                        <label for="login-password">Contraseña</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Recuérdame la contraseña</label>
+                        <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-form">Iniciar Sesión</button>
+                    <div class="login-register">
+                        <p>¿No tienes una cuenta? <a href="#" class="register-link">Registrarse</a></p>
+                        <p>
+                            Accesos rápidos de prueba:
+                        </p>
+
+                        <button class="btn-form" type="button"
+                            onclick="window.location.href='../../../src/features/dashboards/learner-dashboard/learner-dashboard.html'">
+                            👤 Aprendiz
+                        </button>
+                        <button class="btn-form" type="button" onclick="window.location.href='../../../src/features/dashboards/coach-dashboard/coach-dashboard.html'">
+                            🏋️ Entrenador
+                        </button>
+                        <button class="btn-form" type="button" onclick="window.location.href='../../../src/features/dashboards/staff-dashboard/staff-dashboard.html'">
+                            🛡️ Funcionario
+                        </button>
+
+                        <button class="btn-form" type="button" onclick="window.location.href='../../../src/features/dashboards/admin-dashboard/admin-dashboard.html'">
+                            ⚙️ Administrador
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register -->
+            <div class="form-box register">
+                <h2>Registrarse</h2>
+                <form action="#">
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="register-rol" name="register-rol" required>
+                            <option value="" disabled selected>Seleccione su tipo de cuenta</option>
+                            <option value="APR">Cuenta de Aprendiz</option>
+                            <option value="ENT">Cuenta de Entrenador</option>
+                            <option value="FUN">Cuenta de Funcionario</option>
+                            <option value="ADM">Cuenta de Administrador/option>
+                        </select>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="register-document-type" name="register-document-type" required>
+                            <option value="" disabled selected>Seleccione su tipo de documento</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="PPT">Permiso por Protección Temporal</option>
+                            <option value="PEP">Permiso Especial de Permanencia</option>
+                            <option value="PEP">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="id-card"></ion-icon></span>
+                        <input type="text" id="register-num-document" name="register-num-document" inputmode="numeric"
+                            minlength="10" pattern="[0-9]{10}"
+                            title="El número de identificación debe contener mínimo 10 carácteres" placeholder=" "
+                            required>
+                        <label for="register-num-document">Número de Identificación</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+                        <input type="date" name="birthday" id="birthday" required>
+                        <label for="birthday">Fecha de nacimiento</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" name="name" id="name" placeholder="" required>
+                        <label for="name">Nombre completo</label>
+                    </div>
+
+                    <div class="input-box-radio">
+                        <span class="radio-label">Género</span>
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="genre" value="1" required>
+                                Hombre
+                            </label>
+                            <label>
+                                <input type="radio" name="genre" value="2" required>
+                                Mujer
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select name="marital-status" id="marital-status" required>
+                            <option value="" disabled selected>Seleccione su estado civil</option>
+                            <option value="">Viudo</option>
+                            <option value="">Soltero</option>
+                            <option value="">Casado</option>
+                            <option value="">Union Libre</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="register-blood-type" name="register-blood-type" required>
+                            <option value="" disabled selected>Seleccione su tipo de sangre</option>
+                            <option value='A+'>A+</option>
+                            <option value='A-'>A-</option>
+                            <option value='B+'>B+</option>
+                            <option value='B'>B-</option>
+                            <option value='AB+'>AB+</option>
+                            <option value='AB-'>AB-</option>
+                            <option value='O+'>O+</option>
+                            <option value='O-'>O-</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="fitness"></ion-icon></span>
+                        <input type="text" name="health" id="health" placeholder="" required>
+                        <label for="health">¿Presenta alguna discapacidad?</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="email-register" name="email-register"
+                            pattern="[a-zA-Z0-9._%+\-]+@soy\.sena\.edu\.co"
+                            title="Debe utilizar un correo institucional @soy.sena.edu.co" placeholder=" " required>
+                        <label for="email-register">Correo electrónico institucional</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="password-register" name="password-register" minlength="15"
+                            pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres" placeholder=" "
+                            required>
+                        <label for="password-register">Contraseña</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <input type="number" name="phone" id="phone" inputmode="numeric" minlength="11"
+                            pattern="[0-9]{11}" title="La contraseña debe contener mínimo 10 carácteres" placeholder=""
+                            required>
+                        <label for="phone">Número de telèfono</label>
+                    </div>
+
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="globe"></ion-icon></span>
+                        <input type="text" name="mun" id="mun" placeholder="" required>
+                        <label for="mun">Municipio de nacimiento</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="navigate-circle"></ion-icon></span>
+                        <input type="text" name="dir" id="dir" placeholder="" required>
+                        <label for="dir">Direcciòn de residencia</label>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select class="eps" name="eps" id="eps" required>
+                            <option value="" disabled selected>Seleccione su EPS</option>
+                            <option value="">Sanitas</option>
+                            <option value="">Sura</option>
+                            <option value="">Coomeva</option>
+                            <option value="">Compensar</option>
+                            <option value="">Salud Total</option>
+                            <option value="">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select name="school" id="school" required>
+                            <option value="" disabled selected>Seleccione su centro de formación</option>
+                            <option value="">Agropecuario</option>
+                            <option value="">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" required> Yo acepto los términos & condiciones</label>
+                    </div>
+
+                    <button type="submit" class="btn-form">Registrarse</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Ya tienes una cuenta? <br> <a href="#" class="login-link">Iniciar Sesión</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Forgot Password -->
+            <div class="form-box forgot-password">
+                <h2>Recuperar contraseña</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="recovery-email" name="recovery-email"
+                            pattern="[a-zA-Z0-9._%+\-]+@soy\.sena\.edu\.co"
+                            title="Debe utilizar un correo institucional @soy.sena.edu.co" placeholder=" " required>
+                        <label for="recovery-email">Correo electrónico institucional</label>
+                    </div>
+                    <button type="submit" class="btn-form">Enviar código</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Recuerdas tu contraseña? <br><a href="#" class="forgot-login-link">Iniciar
+                                Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Verification Code -->
+            <div class="form-box verification-code">
+                <h2>Verificar código</h2>
+                <form action="#">
+                    <p class="recovery-info">
+                        Hemos enviado un código de verificación a tu correo. Verifica que lo hayas escrito correctamente
+                        y revisa tu bandeja de entrada
+                        o spam.
+                    </p>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="keypad"></ion-icon></span>
+                        <input type="text" id="verification-code" name="verification-code" inputmode="numeric"
+                            maxlength="6" pattern="[0-9]{6}" placeholder=" " required>
+                        <label for="verification-code">Código de 6 cifras</label>
+                    </div>
+                    <button type="submit" class="btn-form">Verificar código</button>
+                    <button type="button" class="btn-form btn-resend-code">Reenviar código</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Quieres volver? <a href="#" class="verification-login-link">Iniciar
+                                Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- New Password -->
+            <div class="form-box new-password">
+                <h2>Nueva contraseña</h2>
+                <form action="#">
+                    <p class="recovery-info">
+                        Ingresa tu nueva contraseña para recuperar el acceso a tu cuenta.
+                    </p>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="new-password" name="new-password" minlength="15" pattern="[0-9]{15}"
+                            title="La contraseña debe contener mínimo 15 carácteres" placeholder=" " required>
+                        <label for="new-password">Nueva contraseña</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" minlength="15"
+                            pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres" placeholder=" "
+                            required>
+                        <label for="confirm-new-password">Confirmar contraseña</label>
+                    </div>
+                    <button type="submit" class="btn-form">Cambiar contraseña</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Ya la cambiaste? <a href="#" class="new-password-login-link">Iniciar
+                                Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h4>También nos encontrarás en:</h4>
+            <div class="icons">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <ion-icon name="logo-youtube"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-x"></ion-icon>
+                <ion-icon name="logo-tiktok"></ion-icon>
+            </div>
+            <p>@SENAcomunica</p>
+            <a href="https://www.sena.edu.co" title="Pagina del SENA" target="_blank">www.sena.edu.co</a>
+        </div>
+
+        <div>
+            <p>&copy; 2026 Todos los derechos reservados | <a href="https://www.sena.edu.co/" target="_blank">SENA</a>
+                - Servicio Nacional de Aprendizaje.</p>
+            <a href="#" title="Pagina del SENA" target="_blank">
+                Términos & Privacidad</a>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="../../../src/shared/components/reveal.js"></script>
+    <script src="../../../src/features/contact/contact.js"></script>
+    <script type="text/javascript" src="../../../src/shared/components/navbar.js"></script>
+    <script type="text/javascript" src="../../../src/shared/components/map.js"></script>
+    <script type="text/javascript" src="../../../src/shared/components/modal.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

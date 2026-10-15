@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    /*Los navegadores ponen márgenes predeterminados a los elementos, esto hace un reset*/
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+}
+
+/* Quitar el icono nativo del navegador para que no se superponga */
+.input-box input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+

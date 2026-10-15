@@ -1,0 +1,117 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*
+* {
+    outline: 1px solid red;
+}
+*/
+
+/* =========================
+   SECCIONES
+========================= */
+section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+.about-us,
+.equipment,
+.schedule,
+.testimonials,
+.cta {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 80px 5%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    color: var(--color-text);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   ESTILO GLOBAL UNIFICADO PARA TÍTULOS Y LÍNEAS
+========================= */
+.equipment h1,
+.about-us h1,
+.testimonials h1,
+.location h1,
+.schedule h1 {
+    font-size: 32px;
+    color: var(--color-secondary);
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.equipment h1::after,
+.about-us h1::after,
+.testimonials h1::after,
+.location h1::after,
+.schedule h1::after {
+    content: '';
+    display: block;
+    border-radius: 5px;
+    width: 100px;
+    height: 4.5px;
+    /* Aumentado ligeramente para compensar el renderizado en Sobre Nosotros */
+    background: var(--color-secondary);
+    margin: 8px auto 0 auto;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Acercamos el subtítulo de testimonios directamente al título principal */
+.testimonials h1+p,
+.schedule h1+p {
+    margin-top: -15px;
+    margin-bottom: 30px;
+}

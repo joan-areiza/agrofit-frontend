@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/shared/styles/reset.css">
+    <link rel="stylesheet" href="./src/shared/styles/variables.css">
+    <link rel="stylesheet" href="./src/shared/styles/fonts.css">
+    <link rel="stylesheet" href="./src/shared/styles/general.css">
+
+    <link rel="stylesheet" href="./src/shared/styles/navbar.css">
+    <link rel="stylesheet" href="./src/shared/styles/buttons.css">
+    <link rel="stylesheet" href="./src/shared/styles/modal.css">
+    <link rel="stylesheet" href="./src/shared/styles/scroll.css">
+    <link rel="stylesheet" href="./src/shared/styles/footer.css">
+    <link rel="stylesheet" href="./src/shared/styles/responsive.css">
+    <link rel="stylesheet" href="./src/shared/styles/reveal.css">
+
+
+    <link rel="stylesheet" href="./src/features/home/home.css">
+    <title>Agrofit</title>
+    <link rel="icon" type="image/png" href="./public/assets/img/sena-logo.png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./public/assets/img/agrofit-logo.png" alt="Logo de la plataforma" class="logo-agrofit">
+            </a>
+        </div>
+
+        <nav>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="./index.html">INICIO</a></li>
+                    <li><a href="./src/features/about/about.html">ACERCA DE</a></li>
+                    <li><a href="#contact">UBICACIÓN & CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header-buttons">
+            <button class="btn-login-header">Iniciar Sesión</button>
+            <button class="btn-register-header">Registrarse</button>
+        </div>
+
+        <button href="#" class="menu-movil" onclick="open_nav()" type="button">
+            Menú
+        </button>
+
+        <div class="overlay" id="mobile-menu">
+            <a onclick="close_nav()" href="#" class="close">
+                <ion-icon name="close"></ion-icon>
+            </a>
+            <div class="overlay-content">
+                <a href="./index.html">INICIO</a>
+                <a href="./src/features/about/about.html">ACERCA DE</a>
+                <a onclick="close_nav()" href="#contact">UBICACIÓN & CONTACTO</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="text-box" data-reveal="fade-up">
+            <h1>Entrenamiento, Rutinas &
+                <span>Seguimiento de Horas Lúdicas</span>
+            </h1>
+            <p>Plataforma institucional para el control integral del gimnasio AGROFIT. Diseñada para aprendices,
+                instructores deportivos y funcionarios del SENA con evaluación biométrica, control de maquinaria y
+                registro de asistencias.</p>
+            <a href="#" class="hero-btn hero-login-btn">Acceder a AgroFit</a>
+            <a href="./src/features/about/about.html" class="hero-btn hero-about-btn">Más información</a>
+        </div>
+
+        <div class="row">
+    <div class="hero-col" data-reveal="fade-left" data-reveal-delay="1">
+        <h3>60 Hrs</h3>
+        <p class="paragraph-decoration">Horas Lúdicas Certificables</p>
+    </div>
+    <div class="hero-col" data-reveal="fade-up" data-reveal-delay="2">
+        <h3>100%</h3>
+        <p class="paragraph-decoration">Maquinaria Monitoreada</p>
+    </div>
+    <div class="hero-col" data-reveal="fade-up" data-reveal-delay="3">
+        <h3>14+</h3>
+        <p class="paragraph-decoration">Músculos con Mapeo Realista</p>
+    </div>
+    <div class="hero-col" data-reveal="fade-right" data-reveal-delay="4">
+        <h3>2 Jornadas</h3>
+        <p class="paragraph-decoration">Mañana y Tarde</p>
+    </div>
+</div>
+
+        <!-- Botón Scroll Down centrado abajo dentro del hero -->
+        <a href="#about-us" class="scroll-down">
+            <div class="scroll-circle">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+            </div>
+        </a>
+
+    </section>
+
+    <!-- Sobre Nosotros -->
+
+    <section class="about-us" id="about-us">
+        <h1 data-reveal="fade-down">Sobre Nosotros</h1>
+
+        <!-- Fila superior de perfiles -->
+        <div class="about-row">
+            <div class="about-col" data-reveal="fade-up" data-reveal-delay="1">
+                <h3>Elena</h3>
+                <p>Dueña</p>
+            </div>
+            <div class="about-col" data-reveal="fade-up" data-reveal-delay="2">
+                <h3>Camilo</h3>
+                <p>Entrenador</p>
+            </div>
+            <div class="about-col" data-reveal="fade-up" data-reveal-delay="3">
+                <h3>Dayana</h3>
+                <p>Entrenadora</p>
+            </div>
+        </div>
+
+        <!-- Fila inferior de barras -->
+        <div class="stats-row">
+            <div class="stat-box" data-reveal="fade-left" data-reveal-delay="1">
+                <h4>Zona Cardio</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="stat-box" data-reveal="fade-right" data-reveal-delay="2">
+                <h4>Zona Máquinas Guiadas</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="stat-box" data-reveal="fade-left" data-reveal-delay="3">
+                <h4>Zona Peso Libre</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%;"></div>
+                </div>
+            </div>
+            <div class="stat-box" data-reveal="fade-right" data-reveal-delay="4">
+                <h4>Zona Funcional</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Instalaciones-->
+    <section class="equipment">
+        <h1 data-reveal="fade-down">Instalaciones</h1>
+        <div class="equipment-grid">
+            <!-- Columna 1 -->
+            <div class="equipment-col" data-reveal="fade-up" data-reveal-delay="1">
+                <img src="./public/assets/img/instalaciones1.jpg" alt="Bicicletas estáticas">
+                <div class="layer">
+                    <h3>Bicicletas estáticas</h3>
+                </div>
+            </div>
+            <!-- Columna 2 -->
+            <div class="equipment-col" data-reveal="scale-in" data-reveal-delay="2">
+                <img src="./public/assets/img/instalaciones2.jpg" alt="Sala Principal">
+                <div class="layer">
+                    <h3>Sala Principal</h3>
+                </div>
+            </div>
+            <!-- Columna 3 -->
+            <div class="equipment-col" data-reveal="fade-up" data-reveal-delay="3">
+                <img src="./public/assets/img/instalaciones3.jpg" alt="Clases Dirigidas">
+                <div class="layer">
+                    <h3>Clases Dirigidas</h3>
+                </div>
+            </div>
+            <!-- Columna 4 -->
+            <div class="equipment-col" data-reveal="scale-in" data-reveal-delay="4">
+                <img src="./public/assets/img/instalaciones4.jpg" alt="Sala de Máquinas">
+                <div class="layer">
+                    <h3>Sala de Máquinas</h3>
+                </div>
+            </div>
+            <!-- Columna 5 -->
+            <div class="equipment-col" data-reveal="fade-left" data-reveal-delay="5">
+                <img src="./public/assets/img/instalaciones5.jpg" alt="Entrenamiento Funcional">
+                <div class="layer">
+                    <h3>Entrenamiento Funcional</h3>
+                </div>
+            </div>
+            <!-- Columna 6 -->
+            <div class="equipment-col" data-reveal="fade-right" data-reveal-delay="6">
+                <img src="./public/assets/img/instalaciones6.jpg" alt="Área Libre">
+                <div class="layer">
+                    <h3>Área Libre</h3>
+                </div>
+            </div>
+        </div>
+        <div class="equipment-dots" id="equipmentDots" aria-label="Indicadores de instalaciones"></div>
+    </section>
+
+    <section class="schedule" id="horarios">
+        <h1 data-reveal="fade-down">Horarios</h1>
+
+        <div class="schedule-cards-container" data-reveal="fade-up" data-reveal-delay="2">
+            <!-- Card Abierto -->
+            <div class="time-card open">
+                <div class="icon-box">
+                    <ion-icon name="time-outline"></ion-icon>
+                </div>
+                <h3>Lunes a Viernes</h3>
+                <p class="hours">08:00 a.m. - 05:00 p.m.</p>
+                <span class="badge-open">Abierto</span>
+            </div>
+
+            <!-- Card Cerrado -->
+            <div class="time-card closed">
+                <div class="icon-box">
+                    <ion-icon name="moon-outline"></ion-icon>
+                </div>
+                <h3>Fines de Semana</h3>
+                <p class="hours">Sábados y Domingos</p>
+                <span class="badge-closed">Cerrado</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h1 data-reveal="fade-down">Testimonios</h1>
+        <p data-reveal="fade-in" data-reveal-delay="1">¿Nuestros estudiantes que dicen?</p>
+        <div class="row">
+            <div class="testimonial-col" data-reveal="fade-left" data-reveal-delay="1">
+                <img src="./public/assets/img/user1.jpg" alt="Cristina">
+                <div>
+                    <p class="paragraph-testimonial">
+                        "Desde que empecé a entrenar aquí he notado un cambio increíble, tanto física como mentalmente.
+                        Los entrenadores están siempre pendientes y el ambiente hace que tengas ganas de seguir
+                        mejorando."
+                    </p>
+                    <h3>Cristina Sánchez</h3>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star-half"></ion-icon>
+                </div>
+            </div>
+            <div class="testimonial-col" data-reveal="fade-right" data-reveal-delay="2">
+                <img src="./public/assets/img/user2.jpg" alt="David">
+                <div>
+                    <p class="paragraph-testimonial">
+                        "Excelente gimnasio, con buenas instalaciones y un ambiente muy motivador. Llevo varios meses
+                        entrenando y he conseguido mejorar mi fuerza y mi condición física mucho más de lo que
+                        esperaba." </p>
+                    <h3>David Martínez</h3>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star"></ion-icon>
+                    <ion-icon class="star-icon" name="star-half"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta contact" id="contact">
+        <h1 data-reveal="scale-in">Plataforma Deportiva Oficial SENA • AGROFIT</h1>
+        <a href="./src/features/contact/contact.html" class="hero-btn">Contactar</a>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+            </span>
+
+            <!-- Login -->
+            <div class="form-box login">
+                <h2>Iniciar Sesión</h2>
+                <form action="#">
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="login-document-type" name="login-document-type" required>
+                            <option value="" disabled selected>Seleccione su tipo de documento</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="PPT">Permiso por Protección Temporal</option>
+                            <option value="PEP">Permiso Especial de Permanencia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="id-card"></ion-icon></span>
+                        <input type="number" id="login-num-document" name="login-num-document" inputmode="numeric"
+                            minlength="10" pattern="[0-9]{10}"
+                            title="El número de identificación debe contener mínimo 10 carácteres" placeholder=" "
+                            required>
+                        <label for="login-num-document">Número de Identificación</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="login-password" name="login-password" minlength="15"
+                            pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres" placeholder=" "
+                            required>
+                        <label for="login-password">Contraseña</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Recuérdame la contraseña</label>
+                        <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-form">Iniciar Sesión</button>
+                    <div class="login-register">
+                        <p>¿No tienes una cuenta? <a href="#" class="register-link">Registrarse</a></p>
+                        <p>
+                            Accesos rápidos de prueba:
+                        </p>
+
+                        <button class="btn-form" type="button"
+                            onclick="window.location.href='./src/features/dashboards/learner-dashboard/learner-dashboard.html'">
+                            👤 Aprendiz
+                        </button>
+                        <button class="btn-form" type="button"
+                            onclick="window.location.href='./src/features/dashboards/coach-dashboard/coach-dashboard.html'">
+                            🏋️ Entrenador
+                        </button>
+                        <button class="btn-form" type="button"
+                            onclick="window.location.href='./src/features/dashboards/staff-dashboard/staff-dashboard.html'">
+                            🛡️ Funcionario
+                        </button>
+
+                        <button class="btn-form" type="button"
+                            onclick="window.location.href='./src/features/dashboards/admin-dashboard/admin-dashboard.html'">
+                            ⚙️ Administrador
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- Register -->
+            <div class="form-box register">
+                <h2>Registrarse</h2>
+                <form action="#">
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="register-rol" name="register-rol" required>
+                            <option value="" disabled selected>Seleccione su tipo de cuenta</option>
+                            <option value="APR">Cuenta de Aprendiz</option>
+                            <option value="ENT">Cuenta de Entrenador</option>
+                            <option value="FUN">Cuenta de Funcionario</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="register-document-type" name="register-document-type" required>
+                            <option value="" disabled selected>Seleccione su tipo de documento</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="PPT">Permiso por Protección Temporal</option>
+                            <option value="PEP">Permiso Especial de Permanencia</option>
+                            <option value="PEP">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="id-card"></ion-icon></span>
+                        <input type="text" id="register-num-document" name="register-num-document" inputmode="numeric"
+                            minlength="10" pattern="[0-9]{10}"
+                            title="El número de identificación debe contener mínimo 10 carácteres" placeholder=" "
+                            required>
+                        <label for="register-num-document">Número de Identificación</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+                        <input type="date" name="birthday" id="birthday" required>
+                        <label for="birthday">Fecha de nacimiento</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" name="name" id="name" placeholder="" required>
+                        <label for="name">Nombres</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" name="last-name" id="last-name" placeholder="" required>
+                        <label for="last-name">Apellidos</label>
+                    </div>
+
+                    <div class="input-box-radio">
+                        <span class="radio-label">Género</span>
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="genre" value="1" required>
+                                Hombre
+                            </label>
+                            <label>
+                                <input type="radio" name="genre" value="2" required>
+                                Mujer
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select name="marital-status" id="marital-status" required>
+                            <option value="" disabled selected>Seleccione su estado civil</option>
+                            <option value="">Viudo</option>
+                            <option value="">Soltero</option>
+                            <option value="">Casado</option>
+                            <option value="">Union Libre</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select id="register-blood-type" name="register-blood-type" required>
+                            <option value="" disabled selected>Seleccione su tipo de sangre</option>
+                            <option value='A+'>A+</option>
+                            <option value='A-'>A-</option>
+                            <option value='B+'>B+</option>
+                            <option value='B'>B-</option>
+                            <option value='AB+'>AB+</option>
+                            <option value='AB-'>AB-</option>
+                            <option value='O+'>O+</option>
+                            <option value='O-'>O-</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="fitness"></ion-icon></span>
+                        <input type="text" name="health" id="health" placeholder="" required>
+                        <label for="health">¿Presenta alguna discapacidad?</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="email-register" name="email-register"
+                            pattern="[a-zA-Z0-9._%+\-]+@soy\.sena\.edu\.co"
+                            title="Debe utilizar un correo institucional @soy.sena.edu.co" placeholder=" " required>
+                        <label for="email-register">Correo electrónico institucional</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="password-register" name="password-register" minlength="15"
+                            pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres" placeholder=" "
+                            required>
+                        <label for="password-register">Contraseña</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="confirm-password-register" name="confirm-password-register"
+                            minlength="15" pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres"
+                            placeholder=" " required>
+                        <label for="confirm-password-register">Confirmar contraseña</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <input type="number" name="phone" id="phone" inputmode="numeric" minlength="11"
+                            pattern="[0-9]{11}" title="La contraseña debe contener mínimo 10 carácteres" placeholder=""
+                            required>
+                        <label for="phone">Número de telèfono</label>
+                    </div>
+
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="globe"></ion-icon></span>
+                        <input type="text" name="mun" id="mun" placeholder="" required>
+                        <label for="mun">Municipio de nacimiento</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="navigate-circle"></ion-icon></span>
+                        <input type="text" name="dir" id="dir" placeholder="" required>
+                        <label for="dir">Direcciòn de residencia</label>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select class="eps" name="eps" id="eps" required>
+                            <option value="" disabled selected>Seleccione su EPS</option>
+                            <option value="">Sanitas</option>
+                            <option value="">Sura</option>
+                            <option value="">Coomeva</option>
+                            <option value="">Compensar</option>
+                            <option value="">Salud Total</option>
+                            <option value="">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box select-box">
+                        <span class="icon"><ion-icon name="chevron-down"></ion-icon></span>
+                        <select name="school" id="school" required>
+                            <option value="" disabled selected>Seleccione su centro de formación</option>
+                            <option value="">Agropecuario</option>
+                            <option value="">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" required> Yo acepto los términos & condiciones</label>
+                    </div>
+
+                    <button type="submit" class="btn-form">Registrarse</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Ya tienes una cuenta? <br> <a href="#" class="login-link">Iniciar Sesión</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Forgot Password -->
+            <div class="form-box forgot-password">
+                <h2>Recuperar contraseña</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="recovery-email" name="recovery-email"
+                            pattern="[a-zA-Z0-9._%+\-]+@soy\.sena\.edu\.co"
+                            title="Debe utilizar un correo institucional @soy.sena.edu.co" placeholder=" " required>
+                        <label for="recovery-email">Correo electrónico institucional</label>
+                    </div>
+                    <button type="submit" class="btn-form">Enviar código</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Recuerdas tu contraseña? <br><a href="#" class="forgot-login-link">Iniciar
+                                Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Verification Code -->
+            <div class="form-box verification-code">
+                <h2>Verificar código</h2>
+                <form action="#">
+                    <p class="recovery-info">
+                        Hemos enviado un código de verificación a tu correo. Verifica que lo hayas escrito correctamente
+                        y revisa tu bandeja de entrada
+                        o spam.
+                    </p>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="keypad"></ion-icon></span>
+                        <input type="text" id="verification-code" name="verification-code" inputmode="numeric"
+                            maxlength="6" pattern="[0-9]{6}" placeholder=" " required>
+                        <label for="verification-code">Código de 6 cifras</label>
+                    </div>
+                    <button type="submit" class="btn-form">Verificar código</button>
+                    <button type="button" class="btn-form btn-resend-code">Reenviar código</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Quieres volver? <a href="#" class="verification-login-link">Iniciar
+                                Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- New Password -->
+            <div class="form-box new-password">
+                <h2>Nueva contraseña</h2>
+                <form action="#">
+                    <p class="recovery-info">
+                        Ingresa tu nueva contraseña para recuperar el acceso a tu cuenta.
+                    </p>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="new-password" name="new-password" minlength="15" pattern="[0-9]{15}"
+                            title="La contraseña debe contener mínimo 15 carácteres" placeholder=" " required>
+                        <label for="new-password">Nueva contraseña</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" minlength="15"
+                            pattern="[0-9]{15}" title="La contraseña debe contener mínimo 15 carácteres" placeholder=" "
+                            required>
+                        <label for="confirm-new-password">Confirmar contraseña</label>
+                    </div>
+                    <button type="submit" class="btn-form">Cambiar contraseña</button>
+                    <div class="login-register">
+                        <p class="p-input">¿Ya la cambiaste? <a href="#" class="new-password-login-link">Iniciar
+                                Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div data-reveal="fade-up" data-reveal-delay="1">
+            <h4>También nos encontrarás en:</h4>
+            <div class="icons" data-reveal="fade-up" data-reveal-delay="2">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <ion-icon name="logo-youtube"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-x"></ion-icon>
+                <ion-icon name="logo-tiktok"></ion-icon>
+            </div>
+            <p>@SENAcomunica</p>
+            <a href="https://www.sena.edu.co" title="Pagina del SENA" target="_blank">www.sena.edu.co</a>
+        </div>
+
+        <div data-reveal="fade-up" data-reveal-delay="3">
+            <p>&copy; 2026 Todos los derechos reservados | <a href="https://www.sena.edu.co/" target="_blank">SENA</a>
+                - Servicio Nacional de Aprendizaje.</p>
+            <a href="#" title="Pagina del SENA" target="_blank">
+                Términos & Privacidad</a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./src/shared/components/navbar.js" defer></script>
+    <script type="text/javascript" src="./src/shared/components/modal.js" defer></script>
+    <script type="text/javascript" src="./src/shared/components/reveal.js" defer></script>
+    <script type="text/javascript" src="./src/features/home/home.js" defer></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

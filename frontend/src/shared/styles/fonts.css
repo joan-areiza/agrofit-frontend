@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Work Sans";
+    src: url("../../../public/assets/fonts/Work_Sans/static/WorkSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+ @font-face {
+    font-family: 'Calibri Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibri Regular'), url('../../../public/assets/fonts/Calibri/Calibri.woff') format('woff');
+    }
